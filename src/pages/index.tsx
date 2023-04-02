@@ -16,6 +16,7 @@ export default function Home() {
         <div className="flex flex-row gap-4 items-center">
           <Button>Hello</Button>
           <Button variant="ghost">Ghost</Button>
+          <Button variant="outline">Outline</Button>
           <Button variant="link">Link</Button>
           <Button disabled>Disabled</Button>
           <Button isLoading>Loading Button</Button>

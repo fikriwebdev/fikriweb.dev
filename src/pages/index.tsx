@@ -1,13 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionHeader,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/Accordion";
-import Button from "@/components/Button";
+import Alert from "@/components/Alert";
 import Head from "next/head";
-import { AiOutlineArrowRight, AiOutlineMail } from "react-icons/ai";
 
 export default function Home() {
   return (
@@ -20,40 +12,21 @@ export default function Home() {
       </Head>
       <main>
         <h1 className="text-lg text-red-500">Hello</h1>
-        <div className="flex flex-row gap-4 items-center">
-          <Button>Hello</Button>
-          <Button variant="ghost">Ghost</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="link">Link</Button>
-          <Button disabled>Disabled</Button>
-          <Button isLoading>Loading Button</Button>
-          <Button leftIcon={<AiOutlineMail />} variant="link">
-            Email
-          </Button>
-          <Button rightIcon={<AiOutlineArrowRight />}>Continue</Button>
-        </div>
 
-        <div className="mt-8">
-          <Accordion type="single">
-            <AccordionItem value="item-1">
-              <AccordionHeader>
-                <AccordionTrigger>Hello</AccordionTrigger>
-              </AccordionHeader>
-              <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionHeader>
-                <AccordionTrigger>Hello</AccordionTrigger>
-              </AccordionHeader>
-              <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionHeader>
-                <AccordionTrigger>Hello</AccordionTrigger>
-              </AccordionHeader>
-              <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        <div className="flex flex-col gap-4 max-w-md border p-4">
+          <Alert>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus,
+            corrupti!
+          </Alert>
+          <Alert status="success" variant="top-accent">
+            Success
+          </Alert>
+          <Alert status="error" variant="left-accent">
+            Hello
+          </Alert>
+          <Alert status="warning" variant="top-accent">
+            Hello
+          </Alert>
         </div>
       </main>
     </>

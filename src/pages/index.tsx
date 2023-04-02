@@ -1,3 +1,10 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/Accordion";
 import Button from "@/components/Button";
 import Head from "next/head";
 import { AiOutlineArrowRight, AiOutlineMail } from "react-icons/ai";
@@ -24,6 +31,29 @@ export default function Home() {
             Email
           </Button>
           <Button rightIcon={<AiOutlineArrowRight />}>Continue</Button>
+        </div>
+
+        <div className="mt-8">
+          <Accordion type="single">
+            <AccordionItem value="item-1">
+              <AccordionHeader>
+                <AccordionTrigger>Hello</AccordionTrigger>
+              </AccordionHeader>
+              <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionHeader>
+                <AccordionTrigger>Hello</AccordionTrigger>
+              </AccordionHeader>
+              <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionHeader>
+                <AccordionTrigger>Hello</AccordionTrigger>
+              </AccordionHeader>
+              <AccordionContent>Lorem ipsum dolor sit amet.</AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </main>
     </>

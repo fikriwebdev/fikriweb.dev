@@ -66,7 +66,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...rest}
       >
         {isLoading ? (
-          <AiOutlineLoading3Quarters className="animate-spin" />
+          <AiOutlineLoading3Quarters
+            className="animate-spin"
+            role="progressbar"
+          />
         ) : null}
         {leftIcon && !isLoading ? leftIcon : null}
         {isLoading ? loadingText : children}

@@ -4,7 +4,7 @@ import React from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-gray-900 active:scale-95 gap-2",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium cursor-pointer disabled:opacity-70 dark:disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-gray-900 active:scale-95 gap-2",
   {
     variants: {
       size: {
@@ -14,7 +14,8 @@ const buttonVariants = cva(
       },
       variant: {
         default: "bg-emerald-500 hover:bg-emerald-600 text-white",
-        ghost: "bg-transparent hover:bg-gray-500 text-black dark:text-white",
+        ghost:
+          "bg-transparent hover:bg-gray-200 dark:hover:bg-gray-500 text-black dark:text-white",
         link: "bg-transparent underline underline-offset-4 text-black dark:text-white",
         outline:
           "bg-transparent border border-gray-400 hover:bg-gray-400 hover:bg-opacity-30 text-black dark:text-white",

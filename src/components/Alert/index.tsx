@@ -8,13 +8,13 @@ const alertVariants = cva(
   {
     variants: {
       status: {
-        info: "bg-sky-400 [&>span]:bg-sky-400/80 [&>span]:p-1 border-sky-500 border-0",
+        info: "bg-sky-300 [&>span]:bg-sky-600 [&>span>svg]:text-white dark:[&>span>svg]:text-black   dark:[&>span]:bg-sky-300/80 [&>span]:p-1 border-sky-500 border-0",
         success:
-          "bg-green-400  [&>span]:bg-green-400/80 [&>span]:p-1 border-green-500 border-0",
+          "bg-green-300 [&>span]:bg-green-600 [&>span>svg]:text-white dark:[&>span>svg]:text-black    dark:[&>span]:bg-green-300/80 [&>span]:p-1 border-green-500 border-0",
         error:
-          "bg-red-400  [&>span]:bg-red-400/80 [&>span]:p-1 border-red-500 border-0",
+          "bg-red-300 [&>span]:bg-red-600 [&>span>svg]:text-white dark:[&>span>svg]:text-black   dark:[&>span]:bg-red-300/80 [&>span]:p-1 border-red-500 border-0",
         warning:
-          "bg-yellow-400  [&>span]:bg-yellow-400/80 [&>span]:p-1 border-yellow-500 border-0",
+          "bg-yellow-300 [&>span]:bg-yellow-600 [&>span>svg]:text-white dark:[&>span>svg]:text-black   dark:[&>span]:bg-yellow-300/80 [&>span]:p-1 border-yellow-500 border-0",
       },
       variant: {
         subtle:

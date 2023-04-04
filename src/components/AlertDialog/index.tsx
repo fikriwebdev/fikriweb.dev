@@ -52,7 +52,7 @@ const AlertDialogContent = React.forwardRef<
     <RadixAlert.Content
       ref={ref}
       className={clsm(
-        "bg-white dark:bg-gray-800 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fixed p-4 rounded-md w-[90vw] max-w-[500px] max-h-[85vh] focus:outline-none animate-alertContentShow",
+        "bg-white dark:bg-gray-800 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fixed p-4 rounded-md w-[90vw] max-w-[500px] max-h-[85vh] shadow-lg dark:shadow-2xl focus:outline-none animate-alertContentShow",
         className
       )}
       {...rest}
@@ -87,7 +87,10 @@ const AlertDialogDescription = React.forwardRef<
   return (
     <RadixAlert.Description
       ref={ref}
-      className={clsm("my-4 leading-6", className)}
+      className={clsm(
+        "my-4 leading-6 text-gray-500 dark:text-gray-300 text-sm",
+        className
+      )}
       {...rest}
     />
   );

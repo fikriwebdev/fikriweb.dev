@@ -1,3 +1,15 @@
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogOverlay,
+  AlertDialogPortal,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/AlertDialog";
+import Button from "@/components/Button";
 import Layout from "@/layout";
 import Head from "next/head";
 
@@ -10,7 +22,35 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout></Layout>
+      <Layout>
+        <AlertDialog>
+          <AlertDialogTrigger>
+            <Button>Open Alert</Button>
+          </AlertDialogTrigger>
+          <AlertDialogPortal>
+            <AlertDialogOverlay />
+            <AlertDialogContent>
+              <AlertDialogTitle>Alert</AlertDialogTitle>
+              <AlertDialogDescription>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Commodi, consectetur.
+              </AlertDialogDescription>
+              <div
+                style={{ display: "flex", gap: 25, justifyContent: "flex-end" }}
+              >
+                <AlertDialogCancel>
+                  <Button variant="ghost">Cancel</Button>
+                </AlertDialogCancel>
+                <AlertDialogAction>
+                  <Button className="bg-red-500 hover:bg-red-600">
+                    Yes, delete account
+                  </Button>
+                </AlertDialogAction>
+              </div>
+            </AlertDialogContent>
+          </AlertDialogPortal>
+        </AlertDialog>
+      </Layout>
     </>
   );
 }

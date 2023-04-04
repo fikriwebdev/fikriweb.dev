@@ -1,17 +1,7 @@
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogOverlay,
-  AlertDialogPortal,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/AlertDialog";
-import Button from "@/components/Button";
+import AspectRatio from "@/components/AspectRatio";
 import Layout from "@/layout";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -23,33 +13,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <AlertDialog>
-          <AlertDialogTrigger>
-            <Button>Open Alert</Button>
-          </AlertDialogTrigger>
-          <AlertDialogPortal>
-            <AlertDialogOverlay />
-            <AlertDialogContent>
-              <AlertDialogTitle>Alert</AlertDialogTitle>
-              <AlertDialogDescription>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Commodi, consectetur.
-              </AlertDialogDescription>
-              <div
-                style={{ display: "flex", gap: 25, justifyContent: "flex-end" }}
-              >
-                <AlertDialogCancel>
-                  <Button variant="ghost">Cancel</Button>
-                </AlertDialogCancel>
-                <AlertDialogAction>
-                  <Button className="bg-red-500 hover:bg-red-600">
-                    Yes, delete account
-                  </Button>
-                </AlertDialogAction>
-              </div>
-            </AlertDialogContent>
-          </AlertDialogPortal>
-        </AlertDialog>
+        <div className="w-[300px]">
+          <AspectRatio className="relative" ratio={16 / 9}>
+            <Image
+              src="/assets/images/gojo.jpg"
+              alt="gojo satoru from jujutsu kaisen"
+              fill
+              className="object-cover object-center"
+            />
+          </AspectRatio>
+        </div>
       </Layout>
     </>
   );

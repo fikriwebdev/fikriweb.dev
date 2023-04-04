@@ -1,4 +1,5 @@
 import Alert from "@/components/Alert";
+import Layout from "@/layout";
 import Head from "next/head";
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <Layout>
         <h1 className="text-lg text-red-500">Hello</h1>
 
         <div className="flex flex-col gap-4 max-w-md border p-4">
@@ -28,7 +29,7 @@ export default function Home() {
             Hello
           </Alert>
         </div>
-      </main>
+      </Layout>
     </>
   );
 }

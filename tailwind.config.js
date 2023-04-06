@@ -45,6 +45,28 @@ module.exports = {
             transform: "translate(-50%, -48%) scale(0.96)",
           },
         },
+        checked: {
+          "0%": {
+            transform: "scale(0)",
+          },
+          "50%": {
+            transform: "scale(1.2)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
+        unchecked: {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.2)",
+          },
+          "100%": {
+            transform: "scale(0)",
+          },
+        },
       },
       animation: {
         slideDown: "slideDown 0.2s ease-out",
@@ -52,6 +74,8 @@ module.exports = {
         alertOverlayShow: "alertOverlayShow 0.2s ease-out",
         alertContentShow: "alertContentShow 0.2s ease-out",
         alertContentHide: "alertContentHide 0.2s ease-out",
+        checked: "checked 0.2s ease-out",
+        unchecked: "unchecked 0.2s ease-out",
       },
     },
   },

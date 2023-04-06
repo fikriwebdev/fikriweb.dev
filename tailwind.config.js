@@ -72,6 +72,7 @@ module.exports = {
         slideDown: "slideDown 0.2s ease-out",
         slideUp: "slideUp 0.2s ease-out",
         alertOverlayShow: "alertOverlayShow 0.2s ease-out",
+        alertOverlayHide: "alertOverlayHide 0.2s ease-out",
         alertContentShow: "alertContentShow 0.2s ease-out",
         alertContentHide: "alertContentHide 0.2s ease-out",
         checked: "checked 0.2s ease-out",

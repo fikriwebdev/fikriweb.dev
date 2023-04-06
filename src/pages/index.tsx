@@ -1,7 +1,5 @@
-import AspectRatio from "@/components/AspectRatio";
 import Layout from "@/layout";
 import Head from "next/head";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,18 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <div className="w-[300px]">
-          <AspectRatio className="relative" ratio={16 / 9}>
-            <Image
-              src="/assets/images/gojo.jpg"
-              alt="gojo satoru from jujutsu kaisen"
-              fill
-              className="object-cover object-center"
-            />
-          </AspectRatio>
-        </div>
-      </Layout>
+      <Layout></Layout>
     </>
   );
 }

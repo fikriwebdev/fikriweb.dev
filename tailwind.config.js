@@ -21,6 +21,10 @@ module.exports = {
           from: { opacity: 0 },
           to: { opacity: 1 },
         },
+        alertOverlayHide: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
         alertContentShow: {
           from: {
             opacity: 0,
@@ -31,12 +35,23 @@ module.exports = {
             transform: "translate(-50%, -50%) scale(1)",
           },
         },
+        alertContentHide: {
+          from: {
+            opacity: 1,
+            transform: "translate(-50%, -50%) scale(1)",
+          },
+          to: {
+            opacity: 0,
+            transform: "translate(-50%, -48%) scale(0.96)",
+          },
+        },
       },
       animation: {
         slideDown: "slideDown 0.2s ease-out",
         slideUp: "slideUp 0.2s ease-out",
         alertOverlayShow: "alertOverlayShow 0.2s ease-out",
         alertContentShow: "alertContentShow 0.2s ease-out",
+        alertContentHide: "alertContentHide 0.2s ease-out",
       },
     },
   },

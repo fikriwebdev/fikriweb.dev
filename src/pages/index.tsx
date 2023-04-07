@@ -10,10 +10,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
-        quae.
-      </Layout>
+      <Layout></Layout>
     </>
   );
 }

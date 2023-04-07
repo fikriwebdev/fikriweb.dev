@@ -23,8 +23,8 @@ const ToggleTheme = () => {
 
 export default function Header() {
   return (
-    <header className="w-full h-16 border-b border-gray-300 dark:border-gray-500 sticky top-0 left-0 right-0">
-      <div className="container h-full mx-auto">
+    <header className="w-full h-16 border-b bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-500 sticky top-0 left-0 right-0 z-50">
+      <div className="container h-full mx-auto px-4 md:px-0">
         <div className="flex items-center h-full justify-between">
           <h1 className="text-transparent text-2xl font-extrabold bg-gradient-to-r from-cyan-500 to-green-500 bg-clip-text">
             FikriUI.com

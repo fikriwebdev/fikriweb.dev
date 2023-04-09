@@ -1,3 +1,4 @@
+import { RadioGroup, RadioGroupItem } from "@/components/RadioGroup";
 import Layout from "@/layout";
 import Head from "next/head";
 
@@ -10,7 +11,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout></Layout>
+      <Layout>
+        <RadioGroup className="flex flex-col gap-4">
+          <RadioGroupItem id="option-1" value="opt1">
+            Option 1
+          </RadioGroupItem>
+          <RadioGroupItem id="option-2" value="opt2">
+            Option 2
+          </RadioGroupItem>
+        </RadioGroup>
+      </Layout>
     </>
   );
 }

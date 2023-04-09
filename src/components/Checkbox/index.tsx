@@ -1,7 +1,8 @@
-import React from "react";
-import * as RadixCheckbox from "@radix-ui/react-checkbox";
-import { BsCheck } from "react-icons/bs";
 import clsm from "@/utils/clsm";
+import * as RadixCheckbox from "@radix-ui/react-checkbox";
+import React from "react";
+import { BsCheck } from "react-icons/bs";
+import Label from "../Label";
 
 interface CheckBoxProps extends Omit<RadixCheckbox.CheckboxProps, "id"> {
   id: string;
@@ -25,12 +26,7 @@ const Checkbox = React.forwardRef<HTMLButtonElement, CheckBoxProps>(
             <BsCheck className="w-6 h-6" />
           </RadixCheckbox.Indicator>
         </RadixCheckbox.Root>
-        <label
-          htmlFor={id}
-          className="peer-disabled:opacity-70 peer-disabled:cursor-not-allowed"
-        >
-          {children}
-        </label>
+        <Label htmlFor={id}>{children}</Label>
       </div>
     );
   }

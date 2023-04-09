@@ -1,6 +1,7 @@
 import React from "react";
 import * as RadixRadioGroup from "@radix-ui/react-radio-group";
 import clsm from "@/utils/clsm";
+import Label from "../Label";
 
 const RadioGroup = RadixRadioGroup.Root;
 
@@ -29,12 +30,7 @@ const RadioGroupItem = React.forwardRef<HTMLButtonElement, RadioGroupItemProps>(
             </div>
           </RadixRadioGroup.Indicator>
         </RadixRadioGroup.Item>
-        <label
-          htmlFor={id}
-          className="peer-disabled:opacity-70 text-sm font-medium leading-none"
-        >
-          {children}
-        </label>
+        <Label htmlFor={id}>{children}</Label>
       </div>
     );
   }

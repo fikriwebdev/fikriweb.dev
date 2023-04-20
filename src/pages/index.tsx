@@ -1,14 +1,13 @@
-import Button from "@/components/Button";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerOverlay,
-  DrawerPortal,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/Drawer";
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/Select";
 import Layout from "@/layout";
 
 import Head from "next/head";
@@ -23,19 +22,24 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Drawer position="bottom">
-          <DrawerTrigger>
-            <Button>Open</Button>
-          </DrawerTrigger>
-          <DrawerPortal>
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerTitle>Drawer</DrawerTitle>
-              <DrawerDescription>Nice</DrawerDescription>
-              <DrawerClose />
-            </DrawerContent>
-          </DrawerPortal>
-        </Drawer>
+        <Select value="item-1">
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="select..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Group 1</SelectLabel>
+              <SelectItem value="item-1">Item 1</SelectItem>
+              <SelectItem value="item-2">Item 2</SelectItem>
+              <SelectItem value="item-3">Item 3</SelectItem>
+              <SelectItem value="item-4">Item 4</SelectItem>
+            </SelectGroup>
+            <SelectSeparator />
+            <SelectItem value="item-5">Item 5</SelectItem>
+            <SelectItem value="item-6">Item 6</SelectItem>
+            <SelectItem value="item-7">Item 7</SelectItem>
+          </SelectContent>
+        </Select>
       </Layout>
     </>
   );

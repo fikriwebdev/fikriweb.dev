@@ -51,7 +51,7 @@ const DrawerOverlay = React.forwardRef<
     <RadixDialog.Overlay
       ref={ref}
       className={clsm(
-        "fixed inset-0 bg-black/30 data-[state=open]:animate-alertOverlayShow data-[state=closed]:animate-alertOverlayHide",
+        "fixed inset-0 bg-black/30 data-[state=open]:animate-alertOverlayShow data-[state=closed]:animate-alertOverlayHide z-[5000]",
         className
       )}
       {...rest}
@@ -60,7 +60,7 @@ const DrawerOverlay = React.forwardRef<
 });
 
 const drawerContentVariants = cva(
-  "bg-white dark:bg-gray-800  fixed  z-[100]  p-4    shadow-lg dark:shadow-2xl focus:outline-none ",
+  "bg-white dark:bg-gray-800  fixed  z-[5000]  p-4    shadow-lg dark:shadow-2xl focus:outline-none ",
   {
     variants: {
       position: {

@@ -36,7 +36,7 @@ const DialogOverlay = React.forwardRef<
     <RadixDialog.Overlay
       ref={ref}
       className={clsm(
-        "fixed inset-0 bg-black/30 data-[state=open]:animate-alertOverlayShow data-[state=closed]:animate-alertOverlayHide",
+        "fixed inset-0 bg-black/30 data-[state=open]:animate-alertOverlayShow data-[state=closed]:animate-alertOverlayHide z-[5000]",
         className
       )}
       {...rest}
@@ -54,7 +54,7 @@ const DialogContent = React.forwardRef<
     <RadixDialog.Content
       ref={ref}
       className={clsm(
-        "bg-white dark:bg-gray-800 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fixed p-4 rounded-md w-[90vw] max-w-[500px] max-h-[85vh] shadow-lg dark:shadow-2xl focus:outline-none data-[state=open]:animate-alertContentShow data-[state=closed]:animate-alertContentHide",
+        "bg-white dark:bg-gray-800 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fixed p-4 rounded-md w-[90vw] max-w-[500px] max-h-[85vh] shadow-lg dark:shadow-2xl focus:outline-none data-[state=open]:animate-alertContentShow data-[state=closed]:animate-alertContentHide z-[5000]",
         className
       )}
       {...rest}

@@ -84,6 +84,70 @@ module.exports = {
           from: { opacity: 0, transform: "translateX(-2px)" },
           to: { opacity: 1, transform: "translateX(0)" },
         },
+        slideLeftShow: {
+          from: {
+            transform: "translateX(-100px)",
+          },
+          to: {
+            transform: "translateX(0)",
+          },
+        },
+        slideLeftHide: {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(-100px)",
+          },
+        },
+        slideRightShow: {
+          from: {
+            transform: "translateX(100px)",
+          },
+          to: {
+            transform: "translateX(0)",
+          },
+        },
+        slideRightHide: {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(100px)",
+          },
+        },
+        slideTopShow: {
+          from: {
+            transform: "translateY(-100px)",
+          },
+          to: {
+            transform: "translateY(0px)",
+          },
+        },
+        slideTopHide: {
+          from: {
+            transform: "translateY(0px)",
+          },
+          to: {
+            transform: "translateY(-100px)",
+          },
+        },
+        slideBottomShow: {
+          from: {
+            transform: "translateY(20px)",
+          },
+          to: {
+            transform: "translateY(0px)",
+          },
+        },
+        slideBottomHide: {
+          from: {
+            transform: "translateY(0px)",
+          },
+          to: {
+            transform: "translateY(20px)",
+          },
+        },
       },
       animation: {
         slideDown: "slideDown 0.2s ease-out",
@@ -101,6 +165,14 @@ module.exports = {
         slideUpAndFade: "slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideRightAndFade:
           "slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        slideLeftShow: "slideLeftShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideLeftHide: "slideLeftHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideRightShow: "slideRightShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideRightHide: "slideRightHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideTopShow: "slideTopShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideTopHide: "slideTopHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideBottomShow: "slideBottomShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideBottomHide: "slideBottomHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },

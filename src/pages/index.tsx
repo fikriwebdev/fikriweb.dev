@@ -1,3 +1,14 @@
+import Button from "@/components/Button";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerOverlay,
+  DrawerPortal,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/Drawer";
 import Layout from "@/layout";
 
 import Head from "next/head";
@@ -11,7 +22,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout></Layout>
+      <Layout>
+        <Drawer position="bottom">
+          <DrawerTrigger>
+            <Button>Open</Button>
+          </DrawerTrigger>
+          <DrawerPortal>
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerTitle>Drawer</DrawerTitle>
+              <DrawerDescription>Nice</DrawerDescription>
+              <DrawerClose />
+            </DrawerContent>
+          </DrawerPortal>
+        </Drawer>
+      </Layout>
     </>
   );
 }

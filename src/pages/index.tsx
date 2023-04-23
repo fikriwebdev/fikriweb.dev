@@ -1,4 +1,4 @@
-import Progress from "@/components/Progress";
+import Slider from "@/components/Slider";
 import Layout from "@/layout";
 
 import Head from "next/head";
@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Progress value={70} className="w-[300px]" />
+        <Slider defaultValue={[50]} />
       </Layout>
     </>
   );

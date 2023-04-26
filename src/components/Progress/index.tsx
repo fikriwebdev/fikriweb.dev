@@ -21,7 +21,7 @@ const Progress = React.forwardRef<HTMLDivElement, RadixProgress.ProgressProps>(
         {...rest}
       >
         <RadixProgress.Indicator
-          className="bg-gray-400 dark:bg-white w-full h-full transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
+          className="bg-gray-400 dark:bg-white w-full h-full transition-transform  ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
           style={{
             transform:
               value && typeof value === "number"

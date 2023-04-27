@@ -7,6 +7,7 @@ module.exports = {
     "./src/**/*.stories.{js,ts,jsx,tsx}",
   ],
   theme: {
+    backgroundSize: {},
     extend: {
       keyframes: {
         slideDown: {

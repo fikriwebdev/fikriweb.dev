@@ -20,6 +20,7 @@ body {
     rgba(17, 24, 39, 0.8) 0%, transparent 20%), linear-gradient(to right, 
     rgba(17, 24, 39, 0.8) 0%, transparent 20%),
     url('/assets/images/dark-grid.svg');
+    background-size: cover;
   mask-image: linear-gradient(to right, transparent 1px, white 1px);
  transition: none;
  

@@ -11,7 +11,7 @@ const ThemeSwitch = React.forwardRef<
   return (
     <RadixSwitch.Root
       className={clsm(
-        "w-20 h-8 transition-colors duration-500 bg-emerald-500 rounded-full relative  data-[state=checked]:bg-gray-700 outline-none cursor-default block",
+        "w-20 h-8 transition-colors duration-500 bg-gray-500 rounded-full relative  data-[state=checked]:bg-gray-700 outline-none cursor-default block",
         className
       )}
       id="switch-theme"
@@ -29,7 +29,7 @@ const ThemeSwitch = React.forwardRef<
         />
         <BsMoonStarsFill
           className={clsm(
-            "text-emerald-200 transform transition-transform duration-500",
+            "text-gray-200 transform transition-transform duration-500",
             checked ? "scale-0" : "scale-100"
           )}
         />
@@ -38,7 +38,7 @@ const ThemeSwitch = React.forwardRef<
         {checked ? (
           <BsMoonStarsFill className="text-gray-700 animate-themeChecked" />
         ) : (
-          <BsSunFill className="text-emerald-500 animate-themeChecked" />
+          <BsSunFill className="text-gray-500 animate-themeChecked" />
         )}
       </RadixSwitch.Thumb>
     </RadixSwitch.Root>

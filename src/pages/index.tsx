@@ -1,7 +1,12 @@
 import Avatar from "@/components/Avatar";
+import Button from "@/components/Button";
 import Layout from "@/layout";
 
 import Head from "next/head";
+import Link from "next/link";
+import { AiFillGithub } from "react-icons/ai";
+import { BsArrowRightShort } from "react-icons/bs";
+import { CgFileDocument } from "react-icons/cg";
 
 export default function Home() {
   return (
@@ -13,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section className="relative flex flex-col items-center justify-center gap-2 paper">
+        <section className="relative flex flex-col items-center justify-center gap-2 paper border-b h-[50vh] border-gray-200 dark:border-gray-800">
           <Avatar
             src="/assets/images/avatar-hero.png"
             size="xl"
@@ -27,6 +32,30 @@ export default function Home() {
             fast, flexible,
             <br className="" /> and flawless.
           </p>
+          <div className="flex jusity-center mt-4">
+            <Button
+              rightIcon={
+                <BsArrowRightShort className="text-xl transform group-hover:translate-x-1 transition-transform duration-300" />
+              }
+              className="group"
+            >
+              Read my blogs
+            </Button>
+          </div>
+          <div className="flex items-center gap-4 mt-4">
+            <Link href="/">
+              <div className="flex items-center gap-1 text-gray-500 font-medium hover:text-gray-600 transition-colors duration-500 dark:text-gray-300 dark:hover:text-gray-400">
+                <CgFileDocument />
+                <p>Resume</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div className="flex items-center gap-1 text-gray-500 font-medium hover:text-gray-600 transition-colors duration-500 dark:text-gray-300 dark:hover:text-gray-400">
+                <AiFillGithub />
+                <p>muhamdfikrii</p>
+              </div>
+            </Link>
+          </div>
         </section>
       </Layout>
     </>

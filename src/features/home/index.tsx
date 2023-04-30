@@ -2,6 +2,7 @@ import Layout from "@/layout";
 
 import Head from "next/head";
 import Hero from "./components/hero";
+import Timelines from "./components/Timelines";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
       <Layout>
         <Hero />
+        <Timelines />
       </Layout>
     </>
   );

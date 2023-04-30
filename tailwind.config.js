@@ -68,7 +68,14 @@ module.exports = {
             transform: "scale(0)",
           },
         },
-
+        themeChecked: {
+          "0%": {
+            transform: "scale(0)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
         slideDownAndFade: {
           from: { opacity: 0, transform: "translateY(-2px)" },
           to: { opacity: 1, transform: "translateY(0)" },
@@ -95,10 +102,12 @@ module.exports = {
         },
         slideLeftHide: {
           from: {
+            opacity: 1,
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(-100px)",
+            opacity: 1,
+            transform: "translateX(-340px)",
           },
         },
         slideRightShow: {
@@ -149,6 +158,16 @@ module.exports = {
             transform: "translateY(20px)",
           },
         },
+        navSlideBottom: {
+          from: {
+            opacity: 0,
+            transform: "translateY(-20px)",
+          },
+          to: {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         slideDown: "slideDown 0.2s ease-out",
@@ -159,6 +178,7 @@ module.exports = {
         alertContentHide: "alertContentHide 0.2s ease-out",
         checked: "checked 0.2s ease-out",
         unchecked: "unchecked 0.2s ease-out",
+        themeChecked: "themeChecked 0.5s ease-out",
         slideDownAndFade:
           "slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideLeftAndFade:
@@ -166,14 +186,15 @@ module.exports = {
         slideUpAndFade: "slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
         slideRightAndFade:
           "slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-        slideLeftShow: "slideLeftShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-        slideLeftHide: "slideLeftHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideLeftShow: "slideLeftShow 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+        slideLeftHide: "slideLeftHide  0.5s cubic-bezier(0.16, 1, 0.3, 1)",
         slideRightShow: "slideRightShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
         slideRightHide: "slideRightHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
         slideTopShow: "slideTopShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
         slideTopHide: "slideTopHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
         slideBottomShow: "slideBottomShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
         slideBottomHide: "slideBottomHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
+        navSlideBottom: "navSlideBottom 0.5s ease-out",
       },
     },
   },

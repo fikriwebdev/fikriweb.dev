@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import * as RadixDialog from "@radix-ui/react-dialog";
 import clsm from "@/utils/clsm";
-import { AiOutlineClose } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
 import {
   DrawerContextProvider,
   DrawerContextValues,
@@ -102,7 +102,7 @@ const DrawerContent = React.forwardRef<
         className="absolute top-4 right-4 cursor-pointer"
       >
         <button>
-          <AiOutlineClose />
+          <IoMdClose className="text-black dark:text-white text-xl" />
         </button>
       </RadixDialog.Close>
       {children}

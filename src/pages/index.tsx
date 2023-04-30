@@ -13,21 +13,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <section className="relative flex flex-col items-center justify-center gap-4 paper h-72 ">
+        <section className="relative flex flex-col items-center justify-center gap-4 paper h-72">
           <Avatar
             src="/assets/images/avatar-hero.png"
             size="xl"
             className="shadow-lg"
           />
           <h1 className="text-4xl font-medium">Hello, I&apos;m Fikri 👋</h1>
-          <p className="text-gray-500">
-            Front End Engineer with +2 years experience
+          <p className="text-gray-500 text-lg text-center">
+            I like to create front-end solutions that are fast, flexible, and
+            flawless.
           </p>
-
-          <div className="absolute top-0  h-4 w-full bg-gradient-to-t from-transparent to-white dark:to-gray-900"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-4 w-full bg-gradient-to-l from-transparent to-white dark:to-gray-900"></div>
-          <div className="absolute left-0 top-0 bottom-0 h-full w-4 bg-gradient-to-b from-transparent to-white dark:to-gray-900"></div>
-          <div className="absolute right-0 top-0 bottom-0 h-full w-4 bg-gradient-to-r from-transparent to-white dark:to-gray-900"></div>
         </section>
       </Layout>
     </>

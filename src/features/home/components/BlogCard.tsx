@@ -14,10 +14,10 @@ export default function BlogCard() {
       </div>
       <div className="absolute bottom-0 left-0 right-0 p-4  gradient-blog-title h-full" />
       <div className="absolute bottom-0 m-4 z-10 transition-transform transform translate-y-[4.25rem] group-hover:translate-y-0">
-        <h1 className="text-3xl text-gray-800 dark:text-white font-semibold">
+        <h1 className="text-3xl text-gray-700 dark:text-gray-200 font-semibold">
           Title of blog
         </h1>
-        <p className="text-gray-800 dark:text-white font-medium">
+        <p className="text-gray-700 dark:text-gray-200 font-medium">
           Lorem ipsum dolor sit amet.
         </p>
         <div className="pt-4">

@@ -1,9 +1,10 @@
 import Layout from "@/layout";
 
 import Head from "next/head";
-import Hero from "./components/hero";
+import Hero from "./components/Hero";
 import Timelines from "./components/Timelines";
 import Blogs from "./components/Blogs";
+import Projects from "./components/Projects";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <Timelines />
         <Blogs />
+        <Projects />
       </Layout>
     </>
   );

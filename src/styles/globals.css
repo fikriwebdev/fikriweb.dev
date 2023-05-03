@@ -21,32 +21,14 @@ body {
     rgba(17, 24, 39, 0.8) 0%, transparent 20%), linear-gradient(to right, 
     rgba(17, 24, 39, 0.8) 0%, transparent 20%),
     url('/assets/images/dark-grid.svg');
-    background-size: cover;
+    
   mask-image: linear-gradient(to right, transparent 1px, white 1px);
  transition: none;
  
 
 }
 
-.dark .gradient-blog-title{
-    background:
-    linear-gradient(to right top, rgba(17, 24, 39, 0.8) 0%/*bottom-left color*/, rgba(17, 24, 39, 0.4) 50% /*middle color*/, rgba(17, 24, 39, 0.1) 100% /*top-left color*/),
-    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
-}
-
-.light .gradient-blog-title{
-    background:
-        linear-gradient(to right top, rgba(255,255,255, 0.8) 0%/*bottom-left color*/, rgba(255,255,255, 0.4) 50% /*middle color*/, rgba(255,255,255, 0.1) 100% /*top-left color*/),
-        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
-}
-
-.blog-shadow {
-    box-shadow: 0px 0px 5px 1px rgba(161,161,161,0.3);
-    -webkit-box-shadow: 0px 0px 5px 1px rgba(161,161,161,0.3);
-    -moz-box-shadow: 0px 0px 5px 1px rgba(161,161,161,0.3);
-}
-
-.light .paper {
+.light .paper {   
     background-image:
     linear-gradient(to bottom, 
     rgba(255,255,255, 0.8) 0%, transparent 40%), linear-gradient(to top, 
@@ -58,5 +40,24 @@ body {
  transition: none;
 
 
+}
+
+
+.dark .gradient-blog-title{
+    background:
+    linear-gradient(to  top, rgba(17, 24, 39, 1) 0%/*bottom-left color*/, rgba(17, 24, 39, 0.7) 10% /*middle color*/, rgba(17, 24, 39, 0.3) 30% /*top-left color*/),
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
+}
+
+.light .gradient-blog-title{
+    background:
+        linear-gradient(to  top, rgba(255,255,255, 1) 0%/*bottom-left color*/, rgba(255,255,255, 0.7) 10% /*middle color*/, rgba(255,255,255, 0.3) 30% /*top-left color*/),
+        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
+}
+
+.blog-shadow {
+    box-shadow: 0px 0px 5px 1px rgba(161,161,161,0.3);
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(161,161,161,0.3);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(161,161,161,0.3);
 }
 

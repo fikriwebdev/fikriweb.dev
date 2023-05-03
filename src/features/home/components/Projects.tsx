@@ -6,7 +6,7 @@ export default function Projects() {
       <h1 className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black dark:from-white to-gray-300  dark:to-gray-700 text-center">
         Projects
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />

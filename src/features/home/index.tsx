@@ -1,7 +1,7 @@
 import Layout from "@/layout";
 
 import Head from "next/head";
-import Hero from "./components/Hero";
+import Hero from "./components/HomeHero";
 import Timelines from "./components/Timelines";
 import Blogs from "./components/Blogs";
 import Projects from "./components/Projects";

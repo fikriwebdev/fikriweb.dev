@@ -5,6 +5,7 @@ import Hero from "./components/HomeHero";
 import Timelines from "./components/Timelines";
 import Blogs from "./components/Blogs";
 import Projects from "./components/Projects";
+import CTACard from "./components/CTACard";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Timelines />
         <Blogs />
         <Projects />
+        <CTACard />
       </Layout>
     </>
   );

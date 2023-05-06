@@ -3,7 +3,7 @@ import { BsClock, BsEye } from "react-icons/bs";
 
 export default function BlogCard() {
   return (
-    <div className="w-full h-[20rem] border border-gray-300 dark:border-gray-800 rounded-md overflow-hidden relative shadow-md group">
+    <div className="w-full h-[20rem] border border-gray-100 dark:border-gray-800 rounded-md overflow-hidden relative shadow-md group">
       <div className="relative h-[70%] w-full opacity-100 dark:opacity-80">
         <div className="absolute inset-0 z-10 gradient-blog-title"></div>
         <div className="relative w-full h-full">

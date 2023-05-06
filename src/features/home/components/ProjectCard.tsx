@@ -43,7 +43,7 @@ const OverlapedImages = () => {
 
 export default function ProjectCard() {
   return (
-    <div className="w-full h-[30rem] md:h-[15rem] bg-white dark:bg-gray-900   border border-gray-300 dark:border-gray-800 rounded-md overflow-hidden relative shadow-md  bg-transparent grid grid-cols-1 md:grid-cols-7 content-start justify-center place-content-center md:content-center">
+    <div className="w-full h-[30rem] md:h-[15rem] bg-white dark:bg-gray-900   border border-gray-300 dark:border-gray-800 rounded-md overflow-hidden relative shadow-md  bg-transparent grid grid-cols-1 md:grid-cols-7 content-start justify-center place-content-center md:content-center paper-project-card">
       <div className="p-4 col-span-3">
         <div className="flex items-center gap-4 mb-2 text-xl text-gray-700 dark:text-gray-200 ">
           <FaReact />
@@ -58,7 +58,12 @@ export default function ProjectCard() {
           eligendi cum incidunt obcaecati dolorum odio aspernatur optio Lorem
           ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, itaque?
         </p>
-        <Button className="mt-4" rightIcon={<BsArrowRight />}>
+        <Button
+          className="mt-4 group"
+          rightIcon={
+            <BsArrowRight className="transform transition-transform duration-500 group-hover:translate-x-1" />
+          }
+        >
           See more{" "}
         </Button>
       </div>

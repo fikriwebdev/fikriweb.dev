@@ -168,6 +168,14 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+        rotate: {
+          from: {
+            transform: "rotate(0deg)",
+          },
+          to: {
+            transform: "rotate(360deg)",
+          },
+        },
       },
       animation: {
         slideDown: "slideDown 0.2s ease-out",
@@ -195,6 +203,7 @@ module.exports = {
         slideBottomShow: "slideBottomShow 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
         slideBottomHide: "slideBottomHide  0.1s cubic-bezier(0.16, 1, 0.3, 1)",
         navSlideBottom: "navSlideBottom 0.5s ease-out",
+        rotate: "rotate 4s linear infinite",
       },
     },
   },

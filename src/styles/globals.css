@@ -65,14 +65,13 @@ body {
 
 .dark .gradient-blog-title{
     background:
-    linear-gradient(to  top, rgba(17, 24, 39, 1) 0%/*bottom-left color*/, rgba(17, 24, 39, 0.7) 10% /*middle color*/, rgba(17, 24, 39, 0.3) 30% /*top-left color*/),
-    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
+    linear-gradient(to  top, rgba(17, 24, 39, 1) 0%, rgba(17, 24, 39, 0.7) 10% , rgba(17, 24, 39, 0.3) 30%)
 }
 
 .light .gradient-blog-title{
     background:
-        linear-gradient(to  top, rgba(255,255,255, 1) 0%/*bottom-left color*/, rgba(255,255,255, 0.7) 10% /*middle color*/, rgba(255,255,255, 0.3) 30% /*top-left color*/),
-        linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
+        linear-gradient(to  top, rgba(255,255,255, 1) 0%, rgba(255,255,255, 0.5) , rgba(255,255,255, 0.1))
+     
 }
 
 .blog-shadow {

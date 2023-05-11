@@ -1,6 +1,6 @@
 import Layout from "@/layout";
-import { getPostBySlug } from "@/libs/mdx";
-import { GetStaticProps } from "next";
+import { getAllPosts, getPostBySlug } from "@/libs/mdx";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
@@ -21,8 +21,21 @@ export default function BlogDetails({ source }: BlogDetailsProps) {
     );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-    const { content, data } = getPostBySlug("introduction");
+export const getStaticPaths: GetStaticPaths = async () => {
+    const blogs = getAllPosts();
+
+    return {
+        paths: blogs.map(blog => ({
+            params: { slug: blog.slug },
+        })),
+        fallback: false,
+    };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const { content, data } = getPostBySlug(
+        typeof params?.slug === "string" ? params.slug : ""
+    );
     const mdxSource = await serialize(content);
 
     return {

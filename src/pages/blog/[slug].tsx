@@ -1,5 +1,6 @@
 import Layout from "@/layout";
 import { getAllPosts, getPostBySlug } from "@/libs/mdx";
+import { IBlog } from "@/types";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -9,11 +10,16 @@ interface BlogDetailsProps {
         Record<string, unknown>,
         Record<string, unknown>
     >;
+    data: IBlog;
 }
 
-export default function BlogDetails({ source }: BlogDetailsProps) {
+export default function BlogDetails({ source, data }: BlogDetailsProps) {
     return (
-        <Layout>
+        <Layout
+            seo={{
+                title: data.title,
+            }}
+        >
             <div className="container mx-auto max-w-lg px-4 md:px-0 blog">
                 <MDXRemote {...source} />
             </div>

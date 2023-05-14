@@ -6,12 +6,54 @@ banner: "/assets/images/avatar-hero.png"
 tags: "retro"
 ---
 
-![alt text](/assets/images/gojo.jpg)
+# Heading 1
 
-# Introduction
+Hello its heading
 
-2021 has been a great year for me, I learned a bunch of things at the rate of a year. I want to make this blog to remind me of what I did and how much I grow each year.
+## Heading 2
 
-# Learning More React Framework
+hello its title
 
-A month before 2021, I decided to come out of my comfort zone which is Create React App, and try another framework such as Gatsby and Next.js. I still remember how I research which framework to learn and the dilemma to invest my time for one framework.
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+```tsx showLineNumbers
+// [slug].tsx;
+
+export default function BlogDetails({ source, data }: BlogDetailsProps) {
+    return (
+        <Layout
+            seo={{
+                title: data.title,
+            }}
+        >
+            <div className="container mx-auto max-w-full md:max-w-7xl px-4 md:px-0 blog">
+                <MDXRemote {...source} />
+            </div>
+        </Layout>
+    );
+}
+```
+
+```tsx showLineNumbers
+// [slug2].tsx;
+
+export default function BlogDetails2({ source, data }: BlogDetailsProps) {
+    return (
+        <Layout
+            seo={{
+                title: data.title,
+            }}
+        >
+            <div className="container mx-auto max-w-full md:max-w-7xl px-4 md:px-0 blog">
+                <MDXRemote {...source} />
+            </div>
+        </Layout>
+    );
+}
+```

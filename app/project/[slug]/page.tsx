@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 import Heading from "@/components/Heading";
 import MarkdownRemote from "@/components/MDXComponent";
 import { getContentBySlug } from "@/libs/mdx";
-import { IBlog } from "@/types";
+import { IProject } from "@/types";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -11,13 +11,13 @@ interface Params {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-    const { data } = await getContentBySlug<IBlog>("blogs", params.slug);
+    const { data } = await getContentBySlug<IProject>("projects", params.slug);
     return { title: data.title, description: data.description };
 }
 
 export default async function BlogDetails({ params }: Params) {
-    const { source, data } = await getContentBySlug<IBlog>(
-        "blogs",
+    const { source, data } = await getContentBySlug<IProject>(
+        "projects",
         params.slug
     );
 

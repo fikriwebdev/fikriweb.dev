@@ -5,4 +5,16 @@ export interface IBlog {
     banner: string;
     tags: string;
     slug: string;
+    source: string;
+}
+
+export interface IProject {
+    title: string;
+    publishedAt: string;
+    description: string;
+    images: string;
+    tags: string;
+    slug: string;
+    source: string;
+    duration: string;
 }

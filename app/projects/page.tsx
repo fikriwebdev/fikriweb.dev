@@ -13,11 +13,16 @@ export default async function Blog() {
 
     return (
         <>
-            <section className="border-b pb-4 border-gray-100 dark:border-gray-700">
-                <Heading as="h1" className="text-left text-gray-300">
+            <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
+                <Heading
+                    as="h1"
+                    className="text-left text-gray-800 dark:text-gray-300"
+                >
                     Projects
                 </Heading>
-                <p className="mt-2">All projects that i proud of.</p>
+                <p className="mt-2 text-left text-gray-800 dark:text-gray-300">
+                    All projects that i proud of.
+                </p>
             </section>
             <section className="mt-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -10,24 +10,55 @@ import {
     DrawerTrigger,
 } from "@/components/Drawer";
 import ThemeSwitch from "@/components/ThemeSwitch";
+import useIsMounted from "@/hooks/useIsMounted";
+import clsm from "@/utils/clsm";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ComponentProps } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import navs from "../../constant/navs";
-import useIsMounted from "@/hooks/useIsMounted";
 
 const ToggleTheme = () => {
     const { theme, setTheme } = useTheme();
 
     const isMounted = useIsMounted();
 
-    if (!isMounted) return null;
+    if (!isMounted) return <div className="w-20" />;
 
     return (
         <ThemeSwitch
             onCheckedChange={checked => setTheme(checked ? "dark" : "light")}
             checked={theme === "dark"}
         />
+    );
+};
+
+interface NavItemProps {
+    href: string;
+    label: string;
+}
+
+const NavItem = ({
+    href,
+    label,
+    className,
+    ...rest
+}: NavItemProps & ComponentProps<"li">) => {
+    const pathname = usePathname();
+    const isActive = pathname === href;
+    return (
+        <li
+            key={href}
+            className={clsm(
+                "text-sm hover:text-gray-500 transition-colors duration-300",
+                isActive ? "text-gray-500" : "",
+                className
+            )}
+            {...rest}
+        >
+            <Link href={href}>{label}</Link>
+        </li>
     );
 };
 
@@ -74,12 +105,11 @@ export default function Header() {
                     </h1>
                     <ul className="items-center gap-8 hidden md:flex">
                         {navs.map(nav => (
-                            <li
+                            <NavItem
                                 key={nav.href}
-                                className="text-sm hover:text-gray-300 transition-colors duration-300"
-                            >
-                                <Link href={nav.href}>{nav.label}</Link>
-                            </li>
+                                href={nav.href}
+                                label={nav.label}
+                            />
                         ))}
                     </ul>
                     <ToggleTheme />

@@ -4,6 +4,7 @@ import { IBlog } from "@/types";
 import BlogCard from "@/components/shared/BlogCard";
 import Button from "@/components/Button";
 import { BsArrowRight } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Blogs({ data }: { data: IBlog[] }) {
     return (
@@ -17,14 +18,16 @@ export default function Blogs({ data }: { data: IBlog[] }) {
 
             {data.length > 6 ? (
                 <div className="flex justify-center mt-4">
-                    <Button
-                        className="mt-4 group"
-                        rightIcon={
-                            <BsArrowRight className="transform transition-transform duration-500 group-hover:translate-x-1" />
-                        }
-                    >
-                        See more blogs
-                    </Button>
+                    <Link href="/blog">
+                        <Button
+                            className="mt-4 group"
+                            rightIcon={
+                                <BsArrowRight className="transform transition-transform duration-500 group-hover:translate-x-1" />
+                            }
+                        >
+                            See more blogs
+                        </Button>
+                    </Link>
                 </div>
             ) : null}
         </section>

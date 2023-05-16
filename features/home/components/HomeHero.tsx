@@ -20,19 +20,21 @@ export default function Hero() {
                 Hello, I&apos;m Fikri 👋
             </h1>
             <p className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black dark:from-white to-gray-300  dark:to-gray-700 text-center">
-                I like to create front-end solutions <br className="" /> that
-                are fast, flexible,
+                I like to create <br className="block md:hidden" /> front-end
+                solutions <br className="" /> that are fast, flexible,
                 <br className="" /> and flawless.
             </p>
             <div className="flex jusity-center mt-4">
-                <Button
-                    rightIcon={
-                        <BsArrowRightShort className="text-xl transform group-hover:translate-x-1 transition-transform duration-300" />
-                    }
-                    className="group"
-                >
-                    Read my blogs
-                </Button>
+                <Link href="/blog">
+                    <Button
+                        rightIcon={
+                            <BsArrowRightShort className="text-xl transform group-hover:translate-x-1 transition-transform duration-300" />
+                        }
+                        className="group"
+                    >
+                        Read my blogs
+                    </Button>
+                </Link>
             </div>
             <div className="flex items-center gap-4 mt-4">
                 <Link href="/">

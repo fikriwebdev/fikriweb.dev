@@ -77,11 +77,12 @@ const Hamburger = () => {
                     <DrawerDescription className="mt-8">
                         <ul className="flex flex-col items-start gap-8">
                             {navs.map(nav => (
-                                <Link key={nav.href} href={nav.href}>
-                                    <li className="text-xl animate-navSlideBottom">
-                                        {nav.label}
-                                    </li>
-                                </Link>
+                                <NavItem
+                                    key={nav.href}
+                                    href={nav.href}
+                                    label={nav.label}
+                                    className="text-xl animate-navSlideBottom"
+                                />
                             ))}
                         </ul>
                     </DrawerDescription>

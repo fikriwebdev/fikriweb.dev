@@ -47,7 +47,7 @@ export default function ProjectCard({ data }: { data: IProject }) {
     const images = data.images.split(",");
 
     return (
-        <Link href={`/project/${data.slug}`}>
+        <Link href={`/projects/${data.slug}`}>
             <div className="w-full h-[30rem] md:h-[15rem] bg-white dark:bg-gray-900   border border-gray-300 dark:border-gray-800 rounded-md overflow-hidden relative   bg-transparent grid grid-cols-1 md:grid-cols-7 content-start justify-center place-content-center md:content-center paper-project-card hover:border-gray-500 dark:hover:border-gray-700 transition-colors duration-500">
                 <div className="p-4 col-span-3">
                     <div className="flex items-center gap-4 mb-2 text-xl text-gray-700 dark:text-gray-200 ">

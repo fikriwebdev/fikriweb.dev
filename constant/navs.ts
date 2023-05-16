@@ -8,7 +8,11 @@ const navs = [
         href: "/blog",
     },
     {
-        label: "UI Collections",
+        label: "Projects",
+        href: "/projects",
+    },
+    {
+        label: "UI Recipes",
         href: "/ui",
     },
     {

@@ -21,12 +21,14 @@ export default async function BlogDetails({ params }: Params) {
         params.slug
     );
 
+    const images = data.images.split(",");
+
     return (
         <div className="container mx-auto max-w-full md:max-w-4xl px-4 md:px-0 blog">
             <div className="mb-4 border-b pb-4 border-gray-100 dark:border-gray-700">
                 <div className="relative w-full h-[200px] md:h-[400px] rounded-md overflow-hidden mb-4">
                     <Image
-                        src={data.banner}
+                        src={images[0]}
                         alt={data.title}
                         fill
                         style={{

@@ -4,8 +4,8 @@ import Header from "../components/layout/Header";
 
 // These styles apply to every route in the application
 import ThemeProvider from "@/components/ThemeProvider";
-import "@/styles/globals.css";
 import "@/styles/code-highlight.css";
+import "@/styles/globals.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
             <body>
                 <ThemeProvider>
                     <Header />
+
                     <main className="flex-1 container mx-auto">
                         <div className="min-h-screen mt-[var(--header-height)] container max-w-7xl mx-auto px-0 md:px-4">
                             <div className="pt-8 flex flex-col">{children}</div>

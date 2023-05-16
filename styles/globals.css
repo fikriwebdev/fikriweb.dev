@@ -15,11 +15,8 @@ body {
 
 .dark .paper {
     background-image:
-    linear-gradient(to bottom, 
-    rgba(17, 24, 39, 0.8) 0%, transparent 40%), linear-gradient(to top, 
-    rgba(17, 24, 39, 0.8) 0%, transparent 40%), linear-gradient(to left, 
-    rgba(17, 24, 39, 0.8) 0%, transparent 20%), linear-gradient(to right, 
-    rgba(17, 24, 39, 0.8) 0%, transparent 20%),
+    linear-gradient(to top, 
+    rgba(17, 24, 39, 0.8) 0%, transparent 40%),
     url('/assets/images/dark-grid.svg');
     
   mask-image: linear-gradient(to right, transparent 1px, white 1px);
@@ -30,11 +27,8 @@ body {
 
 .light .paper {   
     background-image:
-    linear-gradient(to bottom, 
-    rgba(255,255,255, 0.8) 0%, transparent 40%), linear-gradient(to top, 
-    rgba(255,255,255, 0.8) 0%, transparent 40%), linear-gradient(to left, 
-    rgba(255,255,255, 0.8) 0%, transparent 20%), linear-gradient(to right, 
-    rgba(255,255,255, 0.8) 0%, transparent 20%),
+    linear-gradient(to top, 
+    rgba(255,255,255, 0.8) 0%, transparent 40%),
     url('/assets/images/light-grid.svg');
   mask-image: linear-gradient(to right, transparent 1px, white 1px);
  transition: none;

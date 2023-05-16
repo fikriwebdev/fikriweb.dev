@@ -95,9 +95,9 @@ const Hamburger = () => {
 export default function Header() {
     return (
         <header className="w-full fixed top-0 left-0 right-0 z-50 h-[var(--header-height)]">
-            <div className="container max-w-full md:max-w-7xl h-full mx-auto px-4 md:px-0  relative">
-                <div className="absolute inset-0 bg-white/20 dark:bg-gray-900/20 backdrop-blur-sm"></div>
-                <div className="absolute inset-0 flex items-center h-full justify-between border-b border-gray-200/30 dark:border-gray-800/30 px-4">
+            <div className="container max-w-full  h-full mx-auto px-4 md:px-0  relative">
+                <div className="absolute inset-0  backdrop-blur-sm"></div>
+                <div className="absolute inset-0 flex items-center h-full justify-between  dark:border-gray-800/30 px-4 container md:max-w-7xl mx-auto">
                     <h1 className="w-6 text-transparent text-2xl font-extrabold bg-gradient-to-r from-cyan-500 to-green-500 bg-clip-text">
                         <Link href="/">
                             F

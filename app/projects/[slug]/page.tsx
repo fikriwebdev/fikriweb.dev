@@ -1,27 +1,32 @@
-import Button from "@/components/Button";
+import { allProjects } from "@/.contentlayer/generated";
 import Heading from "@/components/Heading";
-import MarkdownRemote from "@/components/MDXComponent";
-import { getContentBySlug } from "@/libs/mdx";
-import { IProject } from "@/types";
+import mdxComponents from "@/components/MDXComponent";
+import { format, parseISO } from "date-fns";
 import { Metadata } from "next";
+import { getMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 
 interface Params {
     params: { slug: string };
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-    const { data } = await getContentBySlug<IProject>("projects", params.slug);
-    return { title: data.title, description: data.description };
+export function generateMetadata({ params }: Params): Metadata {
+    const project = allProjects.find(item =>
+        item._raw.flattenedPath.includes(params.slug)
+    );
+    if (!project) throw new Error(`Project not found for slug: ${params.slug}`);
+    return { title: project.title, description: project.description };
 }
 
 export default async function BlogDetails({ params }: Params) {
-    const { source, data } = await getContentBySlug<IProject>(
-        "projects",
-        params.slug
+    const project = allProjects.find(item =>
+        item._raw.flattenedPath.includes(params.slug)
     );
+    if (!project) throw new Error(`Project not found for slug: ${params.slug}`);
 
-    const images = data.images.split(",");
+    const images = project.images.split(",");
+
+    const MDXContent = getMDXComponent(project.body.code);
 
     return (
         <div className="container mx-auto max-w-full md:max-w-4xl px-4 md:px-0 blog">
@@ -29,7 +34,7 @@ export default async function BlogDetails({ params }: Params) {
                 <div className="relative w-full h-[200px] md:h-[400px] rounded-md overflow-hidden mb-4">
                     <Image
                         src={images[0]}
-                        alt={data.title}
+                        alt={project.title}
                         fill
                         style={{
                             objectFit: "cover",
@@ -37,17 +42,12 @@ export default async function BlogDetails({ params }: Params) {
                         }}
                     />
                 </div>
-                <Heading as="h1">{data.title}</Heading>
+                <Heading as="h1">{project.title}</Heading>
                 <p className="text-gray-800 dark:text-gray-400 text-sm md:text-base">
-                    {data.publishedAt}
+                    {format(parseISO(project.date), "dd MMM yyyy")}
                 </p>
             </div>
-            <MarkdownRemote
-                {...source}
-                components={{
-                    Button,
-                }}
-            />
+            <MDXContent components={mdxComponents} />
         </div>
     );
 }

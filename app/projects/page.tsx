@@ -1,7 +1,7 @@
+import { allProjects } from "@/.contentlayer/generated";
 import Heading from "@/components/Heading";
 import ProjectCard from "@/components/shared/ProjectCard";
-import { getAllContent } from "@/libs/mdx";
-import { IProject } from "@/types";
+import { compareDesc } from "date-fns";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Blog() {
-    const data = await getAllContent<IProject[]>("projects");
+    const projects = allProjects.sort((a, b) =>
+        compareDesc(new Date(a.date), new Date(b.date))
+    );
 
     return (
         <>
@@ -26,8 +28,8 @@ export default async function Blog() {
             </section>
             <section className="mt-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {data.map(project => (
-                        <ProjectCard key={project.slug} data={project} />
+                    {projects.map(project => (
+                        <ProjectCard key={project._id} data={project} />
                     ))}
                 </div>
             </section>

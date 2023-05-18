@@ -1,7 +1,7 @@
+import { allBlogs } from "@/.contentlayer/generated";
 import Heading from "@/components/Heading";
 import BlogCard from "@/components/shared/BlogCard";
-import { getAllContent } from "@/libs/mdx";
-import { IBlog } from "@/types";
+import { compareDesc } from "date-fns";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Blog() {
-    const data = await getAllContent<IBlog[]>("blogs");
+    const blog = allBlogs.sort((a, b) =>
+        compareDesc(new Date(a.date), new Date(b.date))
+    );
 
     return (
         <>
@@ -27,8 +29,8 @@ export default async function Blog() {
             </section>
             <section className="mt-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {data.map(blog => (
-                        <BlogCard key={blog.slug} {...blog} />
+                    {blog.map(blog => (
+                        <BlogCard key={blog._id} {...blog} />
                     ))}
                 </div>
             </section>

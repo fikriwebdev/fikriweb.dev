@@ -1,14 +1,14 @@
 "use client";
 
-import { IBlog } from "@/types";
-import BlogCard from "@/components/shared/BlogCard";
+import { type Blog as BlogType } from "@/.contentlayer/generated";
 import Button from "@/components/Button";
-import { BsArrowRight } from "react-icons/bs";
+import BlogCard from "@/components/shared/BlogCard";
 import Link from "next/link";
+import { BsArrowRight } from "react-icons/bs";
 
-export default function Blogs({ data }: { data: IBlog[] }) {
+export default function Blog({ data }: { data: BlogType[] }) {
     return (
-        <section className="mt-8 flex flex-col justify-center px-4 md:px-0">
+        <section className="mt-20 flex flex-col justify-center px-4 md:px-0">
             <h1 className="gradient-text">Blogs</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                 {data?.slice(0, 6).map(blog => (

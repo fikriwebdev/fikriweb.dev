@@ -1,20 +1,25 @@
-import { getAllContent } from "@/libs/mdx";
-import Blogs from "./components/Blogs";
+import { allProjects, allBlogs } from "contentlayer/generated";
 import CTACard from "./components/CTACard";
 import Hero from "./components/HomeHero";
-import Projects from "./components/Projects";
 import Timelines from "./components/Timelines";
-import { IBlog, IProject } from "@/types";
+import Blogs from "./components/Blog";
+import { compareDesc } from "date-fns";
+
+import Projects from "./components/Projects";
 
 export default async function ViewHomePage() {
-    const blogs = await getAllContent<IBlog[]>("blogs");
-    const projects = await getAllContent<IProject[]>("projects");
+    const blog = allBlogs.sort((a, b) =>
+        compareDesc(new Date(a.date), new Date(b.date))
+    );
+    const projects = allProjects.sort((a, b) =>
+        compareDesc(new Date(a.date), new Date(b.date))
+    );
 
     return (
         <>
             <Hero />
             <Timelines />
-            <Blogs data={blogs} />
+            <Blogs data={blog} />
             <Projects data={projects} />
             <CTACard />
         </>

@@ -3,7 +3,12 @@ import matter, { GrayMatterFile } from "gray-matter";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
-import rehypePrism from "rehype-prism-plus";
+import rehypePrettyCode, { type Options } from "rehype-pretty-code";
+
+const rehypePrettyCodeOptions: Partial<Options> = {
+    // use a prepackaged theme
+    theme: "rehype-pretty-code",
+};
 
 export const getContentBySlug = async <T>(folder: string, slug: string) => {
     const filePath = path.join(process.cwd(), "content", folder, `${slug}.mdx`);
@@ -12,7 +17,7 @@ export const getContentBySlug = async <T>(folder: string, slug: string) => {
 
     const source = await serialize(data.content, {
         mdxOptions: {
-            rehypePlugins: [rehypePrism],
+            rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
         },
     });
 

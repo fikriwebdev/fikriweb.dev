@@ -1,6 +1,6 @@
 "use client";
 
-import { IProject } from "@/types";
+import { Project } from "@/.contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
 import { FaReact } from "react-icons/fa";
@@ -43,11 +43,13 @@ const OverlapedImages = ({ images }: { images: string[] }) => {
     );
 };
 
-export default function ProjectCard({ data }: { data: IProject }) {
+export default function ProjectCard({ data }: { data: Project }) {
     const images = data.images.split(",");
 
+    const slug = data._raw.flattenedPath;
+
     return (
-        <Link href={`/projects/${data.slug}`}>
+        <Link href={`${slug}`}>
             <div className="w-full h-[25rem] md:h-[18rem] bg-white dark:bg-gray-900 group   border border-gray-300 dark:border-gray-800 rounded-md overflow-hidden relative   bg-transparent flex flex-col md:grid  md:grid-cols-7  paper-project-card hover:border-gray-500 dark:hover:border-gray-700 transition-colors duration-500">
                 <div className="px-4 col-span-3 h-[80px]  md:h-full block pt-4 md:pt-0 md:flex flex-col justify-center">
                     <div className="flex items-center gap-4 mb-2 text-xl text-gray-700 dark:text-gray-200 ">

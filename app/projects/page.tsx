@@ -1,6 +1,7 @@
 import { allProjects } from "@/.contentlayer/generated";
 import Heading from "@/components/Heading";
 import ProjectCard from "@/components/shared/ProjectCard";
+import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
 import { compareDesc } from "date-fns";
 import { Metadata } from "next";
 
@@ -16,6 +17,7 @@ export default async function Blog() {
     return (
         <>
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
+                <RightTopSideBlurryShape />
                 <Heading
                     as="h1"
                     className="text-left text-gray-800 dark:text-gray-300"

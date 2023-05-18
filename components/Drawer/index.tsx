@@ -13,23 +13,24 @@ import { cva } from "class-variance-authority";
 
 const Drawer = ({
     children,
-    ...value
-}: DrawerContextValues & PropsWithChildren) => {
+    position,
+    ...rest
+}: DrawerContextValues & PropsWithChildren & RadixDialog.DialogProps) => {
     return (
-        <DrawerContextProvider {...value}>
-            <RadixDialog.Root>{children}</RadixDialog.Root>
+        <DrawerContextProvider position={position}>
+            <RadixDialog.Root {...rest}>{children}</RadixDialog.Root>
         </DrawerContextProvider>
     );
 };
 
 const DrawerTrigger = React.forwardRef<
     HTMLButtonElement,
-    Omit<RadixDialog.DialogTriggerProps, "asChild">
+    RadixDialog.DialogTriggerProps
 >((props, ref) => {
-    const { className, ...rest } = props;
+    const { className, asChild = true, ...rest } = props;
     return (
         <RadixDialog.Trigger
-            asChild
+            asChild={asChild}
             ref={ref}
             className={clsm(className)}
             {...rest}

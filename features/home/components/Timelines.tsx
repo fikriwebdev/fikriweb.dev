@@ -58,7 +58,7 @@ export default function Timelines() {
     ];
 
     return (
-        <section className="mt-8 flex flex-col justify-center px-4 md:px-0">
+        <section className="mt-8 flex flex-col justify-center">
             <h1 className="gradient-text">About me</h1>
             <div className=" text-gray-600 dark:text-gray-300 flex justify-center">
                 <div className="flex flex-col mt-8 gap-4">

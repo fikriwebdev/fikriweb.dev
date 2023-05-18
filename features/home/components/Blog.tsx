@@ -8,7 +8,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 export default function Blog({ data }: { data: BlogType[] }) {
     return (
-        <section className="mt-20 flex flex-col justify-center px-4 md:px-0">
+        <section className="mt-20 flex flex-col justify-center">
             <h1 className="gradient-text">Blogs</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                 {data?.slice(0, 6).map(blog => (

@@ -11,8 +11,8 @@ import { CgFileDocument } from "react-icons/cg";
 export default function Hero() {
     return (
         <section className="h-[60vh] border-gray-200 dark:border-gray-800">
-            <div className="absolute -mt-8 inset-0 w-full h-full object-cover object-center -z-20 bg-[length:30rem] md:bg-[length:120rem] bg-no-repeat bg-[url('/assets/images/blurry-shape-sm.svg')] md:bg-[url('/assets/images/blurry-shape.svg')]" />
-            <div className="absolute -mt-8 inset-0 w-full  object-cover object-center -z-10 paper" />
+            <div className="absolute -mt-8 inset-0 w-full h-[80vh] object-cover object-center -z-20 bg-[length:30rem] md:bg-[length:120rem] bg-no-repeat bg-[url('/assets/images/blurry-shape-sm.svg')] md:bg-[url('/assets/images/blurry-shape.svg')] overflow-hidden" />
+            <div className="absolute -mt-8 inset-0 w-full h-[80vh]  object-cover object-center -z-20 paper overflow-hidden" />
             <div className="flex flex-col items-center justify-center gap-2 h-full">
                 <Avatar
                     src="/assets/images/avatar-hero.png"

@@ -15,7 +15,7 @@ import clsm from "@/utils/clsm";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ComponentProps } from "react";
+import React, { ComponentProps } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import navs from "../../constant/navs";
 
@@ -37,12 +37,14 @@ const ToggleTheme = () => {
 interface NavItemProps {
     href: string;
     label: string;
+    onClickLink?: () => void;
 }
 
 const NavItem = ({
     href,
     label,
     className,
+    onClickLink,
     ...rest
 }: NavItemProps & ComponentProps<"li">) => {
     const pathname = usePathname();
@@ -57,14 +59,17 @@ const NavItem = ({
             )}
             {...rest}
         >
-            <Link href={href}>{label}</Link>
+            <Link href={href} onClick={onClickLink}>
+                {label}
+            </Link>
         </li>
     );
 };
 
 const Hamburger = () => {
+    const [isOpen, setIsOpen] = React.useState(false);
     return (
-        <Drawer>
+        <Drawer open={isOpen} onOpenChange={open => setIsOpen(open)}>
             <DrawerTrigger>
                 <button>
                     <BiMenuAltRight className="text-2xl" />
@@ -82,6 +87,7 @@ const Hamburger = () => {
                                     href={nav.href}
                                     label={nav.label}
                                     className="text-xl animate-navSlideBottom"
+                                    onClickLink={() => setIsOpen(false)}
                                 />
                             ))}
                         </ul>

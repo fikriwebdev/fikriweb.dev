@@ -16,8 +16,8 @@ export default function BlogCard({
 
     return (
         <Link href={`${slug}`}>
-            <div className="w-full h-[20rem] border border-gray-100 dark:border-gray-800 rounded-md overflow-hidden relative  hover:border-gray-200 dark:hover:border-gray-700 transition-colors bg-white dark:bg-gray-900">
-                <div className="relative h-[70%] w-full opacity-100 dark:opacity-80">
+            <div className="w-full h-[20rem] border border-gray-100 dark:border-gray-800 rounded-md overflow-hidden relative  hover:border-gray-200 dark:hover:border-gray-700  bg-white dark:bg-gray-900">
+                <div className="relative h-[70%] w-full">
                     <div className="absolute inset-0 z-10 gradient-blog-title"></div>
                     <div className="relative w-full h-full">
                         <Image

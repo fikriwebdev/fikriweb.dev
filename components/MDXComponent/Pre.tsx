@@ -5,6 +5,7 @@ import React, { ComponentProps } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 import { FiCopy } from "react-icons/fi";
 import { SiCss3, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { GoTerminal } from "react-icons/go";
 import Button from "../Button";
 
 const getIcons = (icon: string) => {
@@ -17,6 +18,8 @@ const getIcons = (icon: string) => {
             return <SiCss3 className="text-lg" />;
         case "tailwind":
             return <SiTailwindcss className="text-lg" />;
+        case "terminal":
+            return <GoTerminal className="text-lg" />;
         default:
             return null;
     }
@@ -33,12 +36,10 @@ const Pre = ({
 
     const title = ref.current?.previousSibling?.textContent;
 
-    console.log({ title });
-
     return (
         <>
-            <div className="bg-slate-700 w-full rounded-t-md flex items-center justify-between px-4 py-2 mb-4">
-                <div className="flex items-center gap-2">
+            <div className="bg-slate-700 w-full rounded-t-md flex items-center justify-between px-4 py-2">
+                <div className="flex items-center gap-2 text-white">
                     {getIcons(lang || "")}
                     {title}
                 </div>

@@ -59,7 +59,7 @@ export default function Timelines() {
 
     return (
         <section className="mt-8 flex flex-col justify-center">
-            <h1 className="gradient-text">About me</h1>
+            <h1 className="gradient-text">My Journey</h1>
             <div className=" text-gray-600 dark:text-gray-300 flex justify-center">
                 <div className="flex flex-col mt-8 gap-4">
                     {timelines.map(tl => (

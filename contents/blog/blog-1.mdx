@@ -1,59 +1,64 @@
 ---
-title: "Introduction"
+title: "How to Install NextJS"
 date: "11 May 2023"
-description: "My retrospective of the year of 2021. Achievements, recognitions, and lessons learned."
-image: "/assets/images/blog-1.jpeg"
-tags: "retro"
+description: "Learn how to install nextjs"
+image: "/assets/images/nextjs.webp"
+tags: "nextjs"
 ---
 
-# Heading 1
+## Introduction
 
-Hello its heading
+> blockquote
+> In this blog post, we will discuss how to install Next.js, a powerful framework for building server-rendered React applications. Next.js provides a seamless developer experience and optimized performance out of the box. Whether you are starting a new project or migrating an existing one, Next.js is a great choice. Let's dive into the installation process!
 
-## Heading 2
+## Prerequisites
 
-hello its title
+Before installing Next.js, make sure you have the following prerequisites installed on your machine:
 
-### Heading 3
+1. **Node.js**: Next.js requires Node.js to be installed. You can download the latest version of Node.js from the official website [nodejs.org](https://nodejs.org) or use a package manager like npm or yarn.
 
-#### Heading 4
+2. _Package Manager_: Next.js works with either npm or yarn as the package manager. Choose the package manager of your preference and ensure it is installed on your machine.
 
-##### Heading 5
+## Step 1: Create a New Next.js Project
 
-###### Heading 6
+To create a new Next.js project, open your terminal and navigate to the directory where you want to create the project. Run the following command to generate a new Next.js project:
 
-```tsx showLineNumbers title="[slug].tsx"
-// [slug].tsx;
-
-export default function BlogDetails({ source, data }: BlogDetailsProps) {
-    return (
-        <Layout
-            seo={{
-                title: data.title,
-            }}
-        >
-            <div className="container mx-auto max-w-full md:max-w-7xl px-4 md:px-0 blog">
-                <MDXRemote {...source} />
-            </div>
-        </Layout>
-    );
-}
+```terminal
+npx create-next-app my-next-app
 ```
 
-```tsx showLineNumbers
-// [slug2].tsx;
+This command will bootstrap a new Next.js project in a directory named my-next-app.
 
-export default function BlogDetails2({ source, data }: BlogDetailsProps) {
-    return (
-        <Layout
-            seo={{
-                title: data.title,
-            }}
-        >
-            <div className="container mx-auto max-w-full md:max-w-7xl px-4 md:px-0 blog">
-                <MDXRemote {...source} />
-            </div>
-        </Layout>
-    );
-}
+## Step 2: Navigate to the Project Directory
+
+After the project is successfully created, navigate to the project directory by running the following command:
+
+```terminal
+cd my-next-app
 ```
+
+Now you are inside the project directory and ready to start the Next.js development server.
+
+## Step 3: Start the Development Server
+
+To start the Next.js development server, run the following command:
+
+```terminal
+npm run dev
+```
+
+or
+
+```terminal
+yarn dev
+```
+
+This command will start the development server and make your Next.js application available at http://localhost:3000. You can access this URL in your browser to view your Next.js application.
+
+## Congratulations! You've Installed Next.js
+
+That's it! You have successfully installed Next.js and created a new project. You can now start building your Next.js application by editing the files in the pages directory. Any changes you make will be automatically reflected in the browser.
+
+Next.js provides a great development experience with features like hot module replacement, server-side rendering, and automatic code splitting. It also offers excellent performance and optimization out of the box, making it a powerful tool for building modern web applications.
+
+Now you are ready to explore the capabilities of Next.js and build amazing React applications. Enjoy your Next.js journey!

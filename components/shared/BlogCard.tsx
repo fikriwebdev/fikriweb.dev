@@ -16,9 +16,8 @@ export default function BlogCard({
 
     return (
         <Link href={`${slug}`}>
-            <div className="w-full h-[20rem] border border-gray-100 dark:border-gray-800 rounded-md overflow-hidden relative  hover:border-gray-200 dark:hover:border-gray-700  bg-white dark:bg-gray-900">
-                <div className="relative h-[70%] w-full">
-                    <div className="absolute inset-0 z-10 gradient-blog-title"></div>
+            <div className="w-full h-[20rem] border border-gray-100 dark:border-gray-800 rounded-md overflow-hidden relative  hover:border-gray-200 dark:hover:border-gray-700  bg-white dark:bg-gray-900 shadow-sm">
+                <div className="relative h-[50%] w-full">
                     <div className="relative w-full h-full">
                         <Image
                             src={image}
@@ -29,14 +28,18 @@ export default function BlogCard({
                     </div>
                 </div>
                 <div
-                    className="absolute bottom-0 m-4 z-10 
-text-gray-700 dark:text-gray-200"
+                    className="p-4 z-10 
+text-gray-700 dark:text-gray-200  h-[50%]"
                 >
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <h1 className="text-lg  font-semibold line-clamp-2">
+                        {title}
+                    </h1>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm font-sm font-semibold mt-1">
                         {format(new Date(date), "dd MMM yyyy")}
                     </p>
-                    <h1 className="text-3xl  font-semibold">{title}</h1>
-                    <p className=" font-medium mt-2">{description}</p>
+                    <p className=" font-normal text-sm mt-2 text-gray-500 dark:text-gray-300 line-clamp-2">
+                        {description}
+                    </p>
                 </div>
             </div>
         </Link>

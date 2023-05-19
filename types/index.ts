@@ -18,3 +18,10 @@ export interface IProject {
     source: string;
     duration: string;
 }
+
+export interface AnchorArray {
+    title: string;
+    level: string;
+    anchor: string;
+    position: number;
+}

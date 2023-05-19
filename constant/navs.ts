@@ -15,10 +15,11 @@ const navs = [
         label: "UI Recipes",
         href: "/ui",
     },
-    {
-        label: "Templates",
-        href: "/templates",
-    },
+    // will add this page later
+    // {
+    //     label: "Templates",
+    //     href: "/templates",
+    // },
     {
         label: "About",
         href: "/about",

@@ -78,9 +78,9 @@ export default async function BlogDetails({ params }: Params) {
                     </div>
                 </div>
             </section>
-            <div className=" mx-auto mt-8">
-                <BoxBorderAnimation className="max-w-lg">
-                    <div className="text-center py-8 px-4 flex flex-col items-center gap-4">
+            <div className=" mx-auto my-8">
+                <BoxBorderAnimation className="max-w-xl">
+                    <div className="text-center p-8 flex flex-col items-center gap-4">
                         <p className="text-3xl">🎊</p>
                         <p className="text-xl font-semibold">
                             Thank you for reading this blog post on {blog.title}
@@ -96,7 +96,7 @@ export default async function BlogDetails({ params }: Params) {
             <Separator />
             <section className="mt-8">
                 <h1 className="gradient-text">See other posts</h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
                     {recommendations.slice(0, 3).map(recommendation => (
                         <BlogCard
                             key={recommendation._id}

@@ -21,7 +21,7 @@ export interface IProject {
 
 export interface AnchorArray {
     title: string;
-    level: string;
+    level: number;
     anchor: string;
     position: number;
 }

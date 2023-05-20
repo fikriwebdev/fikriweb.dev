@@ -48,7 +48,11 @@ const NavItem = ({
     ...rest
 }: NavItemProps & ComponentProps<"li">) => {
     const pathname = usePathname();
-    const isActive = pathname === href;
+    const isActive =
+        href === "/" ? pathname === href : pathname?.startsWith(href);
+
+    console.log({ href, pathname });
+
     return (
         <li
             key={href}

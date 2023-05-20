@@ -31,7 +31,7 @@ export default async function Blog() {
                 </p>
             </section>
             <section className="mt-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     {blog.map(blog => (
                         <BlogCard key={blog._id} {...blog} />
                     ))}

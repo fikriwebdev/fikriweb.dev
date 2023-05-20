@@ -10,13 +10,13 @@ export default function Blog({ data }: { data: BlogType[] }) {
     return (
         <section className="mt-20 flex flex-col justify-center">
             <h1 className="gradient-text">Blogs</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8">
                 {data?.slice(0, 6).map(blog => (
                     <BlogCard key={blog.title} {...blog} />
                 ))}
             </div>
 
-            {data.length > 6 ? (
+            {data.length > 4 ? (
                 <div className="flex justify-center mt-4">
                     <Link href="/blog">
                         <Button

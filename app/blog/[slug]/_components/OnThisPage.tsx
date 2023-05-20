@@ -19,7 +19,7 @@ export default function OnThisPage() {
             const rect = anchorTag?.getBoundingClientRect();
             return {
                 title: anchorTag?.textContent || "",
-                level: anchor.tagName,
+                level: +anchor.tagName.replace("H", ""),
                 anchor: anchor?.id || "",
                 position: rect?.y || 0,
             };
@@ -53,7 +53,10 @@ export default function OnThisPage() {
                         <div
                             key={content.anchor}
                             className={clsm(
-                                isActive ? "text-white" : "text-gray-500"
+                                isActive
+                                    ? "text-black dark:text-white"
+                                    : "text-gray-400 dark:text-gray-500",
+                                +content.level > 2 ? "ml-4" : "ml-0"
                             )}
                         >
                             <a href={`#${content.anchor}`}>{content.title}</a>

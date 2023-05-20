@@ -21,8 +21,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
                 <ThemeProvider>
                     <Header />
 
-                    <main className="flex-1 container mx-auto">
-                        <div className="min-h-screen mt-[var(--header-height)] container max-w-7xl mx-auto px-4 md:px-0">
+                    <main className="flex-1 relative min-h-screen">
+                        <div className=" mt-[var(--header-height)] container max-w-7xl mx-auto px-4 md:px-0 ">
                             <div className="pt-8 flex flex-col">{children}</div>
                         </div>
                     </main>

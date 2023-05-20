@@ -15,10 +15,12 @@ const Timeline = ({ years, title, description }: TimelineProps) => {
                 <p className="w-20 text-center border border-gray-200 bg-gray-100 dark:border-gray-700 rounded-md dark:bg-gray-800 px-2 py-1 mb-2 text-sm md:text-base">
                     {years}
                 </p>
-                <Separator
-                    orientation="vertical"
-                    className="data-[orientation=vertical]:w-1 rounded-full m-0 bg-gradient-to-b from-gray-300 to-white dark:from-gray-700 dark:to-gray-900"
-                />
+                {years !== "Current" ? (
+                    <Separator
+                        orientation="vertical"
+                        className="data-[orientation=vertical]:w-1 rounded-full m-0 bg-gray-300 dark:bg-gray-700"
+                    />
+                ) : null}
                 <div className="w-full absolute bottom-0 left-0 right-0 h-12"></div>
             </div>
             <div>

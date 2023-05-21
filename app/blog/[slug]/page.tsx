@@ -43,6 +43,8 @@ export default async function BlogDetails({ params }: Params) {
         item => item.tags.includes(blog.tags) && item._id !== blog._id
     );
 
+    const tags = blog.tags.split(",");
+
     return (
         <div className="blog">
             <section>
@@ -50,7 +52,7 @@ export default async function BlogDetails({ params }: Params) {
                 <div className="mb-4 border-b pb-4 border-gray-100 dark:border-gray-700">
                     <AspectRatio
                         ratio={16 / 5}
-                        className="rounded-md overflow-hidden mb-4"
+                        className="rounded-md overflow-hidden mb-4 relative"
                     >
                         <Image
                             src={blog.image}
@@ -61,6 +63,16 @@ export default async function BlogDetails({ params }: Params) {
                                 objectPosition: "center",
                             }}
                         />
+                        <div className="flex items-center gap-2 absolute z-[1] bottom-0 left-0 m-4">
+                            {tags.map(tag => (
+                                <div
+                                    key={tag}
+                                    className="bg-gray-300 dark:bg-gray-700 dark:text-white rounded-md px-2 text-sm text-black"
+                                >
+                                    {tag}
+                                </div>
+                            ))}
+                        </div>
                     </AspectRatio>
                     <Heading as="h1" className="mb-4">
                         {blog.title}

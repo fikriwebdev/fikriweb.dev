@@ -53,6 +53,7 @@ export default function OnThisPage() {
                         <div
                             key={content.anchor}
                             className={clsm(
+                                "hover:text-black dark:hover:text-white transition-colors duration-300",
                                 isActive
                                     ? "text-black dark:text-white"
                                     : "text-gray-400 dark:text-gray-500",

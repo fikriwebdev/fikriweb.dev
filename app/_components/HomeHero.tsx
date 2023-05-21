@@ -15,9 +15,10 @@ export default function Hero() {
             <div className="absolute -mt-16 inset-0 w-full h-full  object-cover object-center -z-20 paper overflow-hidden" />
             <div className="flex flex-col items-center justify-center gap-2 h-full">
                 <Avatar
-                    src="/assets/images/avatar-hero.png"
+                    src="/assets/images/avatar.avif"
                     size="xl"
                     className="shadow-lg"
+                    alt="Avatar"
                 />
                 <h1 className="text-base text-gray-400 font-semibold">
                     Hello, I&apos;m Fikri 👋

@@ -30,6 +30,7 @@ const ToggleTheme = () => {
         <ThemeSwitch
             onCheckedChange={checked => setTheme(checked ? "dark" : "light")}
             checked={theme === "dark"}
+            aria-label="Switch theme"
         />
     );
 };

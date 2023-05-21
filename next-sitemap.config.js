@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: "fikriweb.dev",
+    siteUrl: "fikriweb-dev.vercel.app",
     generateRobotsTxt: true,
 };

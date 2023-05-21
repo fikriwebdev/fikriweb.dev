@@ -51,8 +51,6 @@ const NavItem = ({
     const isActive =
         href === "/" ? pathname === href : pathname?.startsWith(href);
 
-    console.log({ href, pathname });
-
     return (
         <li
             key={href}

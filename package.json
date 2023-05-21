@@ -10,8 +10,8 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "test": "jest --watch",
-        "postinstall": "next-sitemap",
-        "postbuild": "next-sitemap"
+        "postinstall": "next-sitemap next-sitemap --config next-sitemap.config.js",
+        "postbuild": "next-sitemap --config next-sitemap.config.js"
     },
     "dependencies": {
         "@mdx-js/loader": "^2.3.0",

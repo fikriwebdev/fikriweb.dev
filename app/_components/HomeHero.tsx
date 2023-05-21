@@ -48,12 +48,16 @@ export default function Hero() {
                             <p>Resume</p>
                         </div>
                     </Link>
-                    <Link href="/">
+                    <a
+                        href="https://github.com/muhamdfikrii"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <div className="flex items-center gap-1 text-gray-500 font-medium hover:text-gray-600 transition-colors duration-500 dark:text-gray-300 dark:hover:text-gray-400">
                             <AiFillGithub />
                             <p>muhamdfikrii</p>
                         </div>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </section>

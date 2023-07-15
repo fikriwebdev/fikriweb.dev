@@ -17,7 +17,7 @@ export const Blog = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: "string",
-            resolve: post => `/contents/blog/${post._raw.flattenedPath}`,
+            resolve: post => `src/contents/blog/${post._raw.flattenedPath}`,
         },
     },
 }));
@@ -36,7 +36,7 @@ export const Project = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: "string",
-            resolve: post => `/contents/projects/${post._raw.flattenedPath}`,
+            resolve: post => `src/contents/projects/${post._raw.flattenedPath}`,
         },
     },
 }));
@@ -47,7 +47,7 @@ const rehypePrettyCodeOptions: Partial<Options> = {
 };
 
 export default makeSource({
-    contentDirPath: "contents",
+    contentDirPath: "src/contents",
     documentTypes: [Blog, Project],
     mdx: {
         rehypePlugins: [

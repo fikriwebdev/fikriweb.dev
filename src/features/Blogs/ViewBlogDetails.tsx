@@ -1,5 +1,3 @@
-"use client";
-
 import AspectRatio from "@/components/AspectRatio";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
@@ -13,7 +11,7 @@ import Image from "next/image";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import OnThisPage from "./components/OnThisPage";
 import { Blog } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer/hooks";
+import { useMDXComponent } from "next-contentlayer/hooks";
 
 interface ViewBlogDetailsProps {
     blog: Blog;
@@ -26,7 +24,7 @@ export default function ViewBlogDetails({
     recommendations,
     tags,
 }: ViewBlogDetailsProps) {
-    const MDXContent = getMDXComponent(blog.body.code);
+    const MDXContent = useMDXComponent(blog.body.code);
 
     return (
         <div className="blog">

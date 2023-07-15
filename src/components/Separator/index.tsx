@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixSeparator from "@radix-ui/react-separator";
 import React from "react";

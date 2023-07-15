@@ -1,5 +1,3 @@
-"use client";
-
 import * as RadixScrollArea from "@radix-ui/react-scroll-area";
 
 const ScrollArea = RadixScrollArea.Root;

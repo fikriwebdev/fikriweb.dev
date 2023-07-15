@@ -1,5 +1,3 @@
-"use client";
-
 import { Blog } from "contentlayer/generated";
 import { format } from "date-fns";
 import Image from "next/image";

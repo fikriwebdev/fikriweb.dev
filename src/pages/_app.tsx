@@ -15,7 +15,7 @@ const poppins = Poppins({
     weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
+const MyApp: AppType = ({ Component, pageProps }) => {
     return (
         <>
             <DefaultSeo {...SEO} />

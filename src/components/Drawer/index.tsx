@@ -1,5 +1,3 @@
-"use client";
-
 import React, { PropsWithChildren } from "react";
 import * as RadixDialog from "@radix-ui/react-dialog";
 import clsm from "@/utils/clsm";

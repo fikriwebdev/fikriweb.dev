@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixSlider from "@radix-ui/react-slider";
 import React from "react";

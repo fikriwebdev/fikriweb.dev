@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixSwitch from "@radix-ui/react-switch";
 import React from "react";

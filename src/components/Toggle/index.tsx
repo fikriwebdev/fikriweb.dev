@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixToggle from "@radix-ui/react-toggle";
 import React from "react";

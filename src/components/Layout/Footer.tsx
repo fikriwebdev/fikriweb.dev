@@ -1,5 +1,3 @@
-"use client";
-
 import navs from "@/constant/navs";
 import Link from "next/link";
 

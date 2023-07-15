@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixProgress from "@radix-ui/react-progress";
 import React from "react";

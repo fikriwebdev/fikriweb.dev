@@ -1,5 +1,3 @@
-"use client";
-
 import useCopyToClipboard from "@/hooks/useCopyToClipboard";
 import React, { ComponentProps } from "react";
 import { AiOutlineCheck } from "react-icons/ai";

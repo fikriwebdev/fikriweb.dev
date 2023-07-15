@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixCheckbox from "@radix-ui/react-checkbox";
 import React from "react";

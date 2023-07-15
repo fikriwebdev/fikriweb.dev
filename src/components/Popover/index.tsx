@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixPopover from "@radix-ui/react-popover";
 import React from "react";

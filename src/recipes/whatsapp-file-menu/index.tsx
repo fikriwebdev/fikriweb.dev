@@ -1,5 +1,3 @@
-"use client";
-
 import Button from "@/components/Button";
 import clsm from "@/utils/clsm";
 

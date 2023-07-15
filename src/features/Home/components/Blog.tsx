@@ -1,5 +1,3 @@
-"use client";
-
 import { type Blog as BlogType } from "contentlayer/generated";
 import Button from "@/components/Button";
 import BlogCard from "@/components/shared/BlogCard";

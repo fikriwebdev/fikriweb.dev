@@ -1,5 +1,3 @@
-"use client";
-
 import { Project } from "contentlayer/generated";
 import ProjectCard from "@/components/shared/ProjectCard";
 

@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import { VariantProps, cva } from "class-variance-authority";
 import React from "react";

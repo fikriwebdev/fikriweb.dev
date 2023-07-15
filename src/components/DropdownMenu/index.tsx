@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixDropdownMenu from "@radix-ui/react-dropdown-menu";
 import React from "react";

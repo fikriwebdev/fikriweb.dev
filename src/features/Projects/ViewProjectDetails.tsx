@@ -3,7 +3,7 @@ import mdxComponents from "@/components/MDXComponent";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
 import { Project } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
-import { getMDXComponent } from "next-contentlayer/hooks";
+import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 
 interface ViewProjectDetailsProps {
@@ -15,7 +15,7 @@ export default function ViewProjectDetails({
     images,
     project,
 }: ViewProjectDetailsProps) {
-    const MDXContent = getMDXComponent(project.body.code);
+    const MDXContent = useMDXComponent(project.body.code);
 
     return (
         <div className="container mx-auto max-w-full md:max-w-4xl px-4 md:px-0 blog">

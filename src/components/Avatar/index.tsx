@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixAvatar from "@radix-ui/react-avatar";
 import { VariantProps, cva } from "class-variance-authority";

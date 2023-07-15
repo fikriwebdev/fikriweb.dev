@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixAlert from "@radix-ui/react-alert-dialog";
 import React from "react";

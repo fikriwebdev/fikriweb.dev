@@ -1,5 +1,3 @@
-"use client";
-
 import { AnchorArray } from "../../../../types";
 import clsm from "@/utils/clsm";
 import React from "react";

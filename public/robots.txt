@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: fikriweb.dev
+Host: fikriweb-dev.vercel.app
 
 # Sitemaps
-Sitemap: fikriweb.dev/sitemap.xml
+Sitemap: fikriweb-dev.vercel.app/sitemap.xml

@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import { ComponentPropsWithoutRef } from "react";
 import Heading from "../Heading";

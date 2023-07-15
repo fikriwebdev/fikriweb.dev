@@ -1,5 +1,3 @@
-"use client";
-
 import clsm from "@/utils/clsm";
 import * as RadixAccordion from "@radix-ui/react-accordion";
 import React from "react";

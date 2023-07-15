@@ -15,11 +15,9 @@ export const getStaticPaths: GetStaticPaths = () => {
         },
     }));
 
-    console.log(paths.map(path => path.params.slug));
-
     return {
         paths,
-        fallback: true,
+        fallback: "blocking",
     };
 };
 
@@ -38,7 +36,6 @@ export const getStaticProps: GetStaticProps<{
     if (!blog) {
         return {
             notFound: true,
-            props: {},
         };
     }
 

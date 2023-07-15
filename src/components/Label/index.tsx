@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import * as RadixLabel from "@radix-ui/react-label";
 import clsm from "@/utils/clsm";

@@ -41,6 +41,25 @@ export const Project = defineDocumentType(() => ({
     },
 }));
 
+export const Recipe = defineDocumentType(() => ({
+    name: "Recipe",
+    filePathPattern: `recipes/**/*.mdx`,
+    contentType: "mdx",
+    fields: {
+        title: { type: "string", required: true },
+        date: { type: "date", required: true },
+        description: { type: "string", required: true },
+        stack: { type: "string", required: true },
+        filename: { type: "string", required: true },
+    },
+    computedFields: {
+        url: {
+            type: "string",
+            resolve: post => `src/contents/recipes/${post._raw.flattenedPath}`,
+        },
+    },
+}));
+
 const rehypePrettyCodeOptions: Partial<Options> = {
     // use a prepackaged theme
     theme: "github-dark",
@@ -48,7 +67,7 @@ const rehypePrettyCodeOptions: Partial<Options> = {
 
 export default makeSource({
     contentDirPath: "src/contents",
-    documentTypes: [Blog, Project],
+    documentTypes: [Blog, Project, Recipe],
     mdx: {
         rehypePlugins: [
             () => tree => {

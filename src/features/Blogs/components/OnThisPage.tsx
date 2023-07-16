@@ -3,7 +3,7 @@ import clsm from "@/utils/clsm";
 import React from "react";
 
 const HEADER_HEIGHT = 64;
-const HEADER_OFFSET = 100;
+const HEADER_OFFSET = HEADER_HEIGHT * 2;
 
 export default function OnThisPage() {
     const [scrollY, setScrollY] = React.useState<number>(0);
@@ -36,7 +36,7 @@ export default function OnThisPage() {
     }, []);
 
     return (
-        <div className="sticky top-[var(--header-height)]">
+        <div className="sticky top-[30%]">
             <div className="text-black dark:text-white text-md font-semibold">
                 On this page
             </div>

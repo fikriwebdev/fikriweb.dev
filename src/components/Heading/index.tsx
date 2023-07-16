@@ -2,15 +2,15 @@ import clsm from "@/utils/clsm";
 import { VariantProps, cva } from "class-variance-authority";
 import React, { ComponentPropsWithRef } from "react";
 
-const headingVariants = cva("font-bold", {
+const headingVariants = cva("leading-4", {
     variants: {
         as: {
-            h1: "text-3xl md:text-4xl",
-            h2: "text-2xl md:text-3xl",
-            h3: "text-xl md:text-2xl",
-            h4: "text-lg md:text-xl",
-            h5: "text-md md:text-lg",
-            h6: "text-sm md:text-md",
+            h1: "text-2xl md:text-3xl",
+            h2: "text-xl md:text-2xl",
+            h3: "text-lg md:text-xl",
+            h4: "text-base md:text-lg",
+            h5: "text-sm md:text-base",
+            h6: "text-xs md:text-sm",
         },
     },
     defaultVariants: {

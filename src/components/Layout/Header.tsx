@@ -12,6 +12,7 @@ import navs from "@/constant/navs";
 import useIsMounted from "@/hooks/useIsMounted";
 import clsm from "@/utils/clsm";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { ComponentProps } from "react";
@@ -107,8 +108,13 @@ export default function Header() {
                 <div className="absolute inset-0 flex items-center h-full justify-between  dark:border-gray-800/30 px-4 container md:max-w-7xl mx-auto">
                     <h1 className="w-6 text-transparent text-2xl font-extrabold bg-gradient-to-r from-cyan-500 to-green-500 bg-clip-text">
                         <Link href="/">
-                            F
-                            <span className="text-black dark:text-white text-sm font-normal"></span>
+                            <Image
+                                src="/assets/svg/logo.svg"
+                                width={100}
+                                height={100}
+                                alt="Logo"
+                                className="rounded-full overflow-hidden"
+                            />
                         </Link>
                     </h1>
                     <ul className="items-center gap-8 hidden md:flex">

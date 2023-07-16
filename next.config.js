@@ -8,6 +8,7 @@ const nextConfig = {
     reactStrictMode: true,
     experimental: {
         appDir: false,
+        largePageDataBytes: 128 * 100000,
     },
 };
 

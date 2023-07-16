@@ -137,7 +137,7 @@ export default function WhatsappFileMenu() {
                             forceMount
                             loop
                             side="top"
-                            className="flex flex-col gap-4 mb-4 w-screen md:w-[450px] items-center relative border"
+                            className="flex flex-col gap-4 mb-4 w-screen md:w-[450px] items-center relative"
                         >
                             {items.map((item, i) => (
                                 <MenuItem key={i} {...item} index={i} />

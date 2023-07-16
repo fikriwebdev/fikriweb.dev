@@ -7,6 +7,7 @@ import { Recipe } from "contentlayer/generated";
 import { Share } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { components } from "./components/RecipeComponents";
+import Separator from "@/components/Separator";
 
 function Components({ filename }: { filename: string }) {
     return (
@@ -41,6 +42,7 @@ export default function ViewRecipeDetails({ recipe }: { recipe: Recipe }) {
                     }}
                 />
             </section>
+            <Separator className="my-4" />
             <div className=" mx-auto my-8">
                 <BoxBorderAnimation className="max-w-xl">
                     <div className="text-center p-8 flex flex-col items-center gap-4">

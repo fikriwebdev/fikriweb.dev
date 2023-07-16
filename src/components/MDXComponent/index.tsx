@@ -72,7 +72,10 @@ const mdxComponents = {
     ),
     p: ({ className, ...props }: ComponentPropsWithoutRef<"p">) => (
         <p
-            className={clsm("mb-8 text-gray-500 dark:text-gray-300", className)}
+            className={clsm(
+                "mb-8 text-gray-500 dark:text-gray-200 text-sm md:text-base font-light",
+                className
+            )}
             {...props}
         />
     ),
@@ -87,7 +90,7 @@ const mdxComponents = {
         <a
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-white inline-block relative p-[1px] -m-[1px]"
+            className="relative p-[1px] -m-[1px] font-medium text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-600"
             {...props}
         />
     ),

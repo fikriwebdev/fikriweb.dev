@@ -1,16 +1,16 @@
 ---
 title: "Whatsapp File Menu"
 date: "16 July 2023"
-description: "Creating animated dropdown menu using radix-ui dropdown menu, tailwindcss and framer-motion, inspired by whatsapp file menu"
+description: "Drawing inspiration from WhatsApp's file menu, I am creating an animated dropdown menu using the robust combination of radix-ui dropdown, tailwindcss, and framer-motion."
 stack: "radix-ui, tailwindcss, framer-motion"
 filename: "whatsapp-file-menu"
 ---
 
-When i open whatsapp web, i just curious how to create animated dropdown menu when you click a file button. So i achive that using radix-ui dropdown component to make it fully accessible by keyboard and animated it using framer-motion. Here the component that i was created:
+When I opened WhatsApp Web, I became curious about how to create an animated dropdown menu when clicking a file button. To achieve this, I used the radix-ui dropdown component to ensure full accessibility by keyboard and animated it with framer-motion. Here is the component that I created:
 
 <Components />
 
-## Install the packages
+## Install dependecies
 
 ```terminal
 npm install @radix-ui/dropdown-menu framer-motion tailwindcss lucid-react
@@ -18,7 +18,7 @@ npm install @radix-ui/dropdown-menu framer-motion tailwindcss lucid-react
 
 ## Creating the component
 
-First, prepared the items that will show within the menu, feel free if you want customize this
+Here are the items that I have prepared for the menu. Feel free to customize them
 
 ```tsx
 import { Camera, File, Image, Paperclip, Sticker } from "lucide-react";
@@ -47,7 +47,7 @@ const items = [
 ];
 ```
 
-After that, we can create the framer-motion variants to animated the dropdown menu and the tooltip
+After that, we can create the framer-motion variants to animate the dropdown menu and the tooltip
 
 ```tsx
 // variants for animating the menu
@@ -178,3 +178,7 @@ export default function WhatsappFileMenu() {
     );
 }
 ```
+
+See full source code [On my github](https://github.com/fikriwebdev/fikriweb.dev/blob/main/src/features/Recipes/all-components/WhatsappFileMenu.tsx)
+
+Embarking on this project was a rewarding experience, as I successfully crafted an animated dropdown menu inspired by WhatsApp's file menu. By utilizing the powerful combination of radix-ui dropdown, tailwindcss, and framer-motion, I ensured accessibility and added delightful animations to the interface. I'm excited to see how this new feature enhances the user experience. Should you have any suggestions or feedback, please don't hesitate to share. Happy coding!

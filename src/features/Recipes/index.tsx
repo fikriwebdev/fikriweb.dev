@@ -14,7 +14,9 @@ export default function ViewRecipes({ recipes }: { recipes: Recipe[] }) {
                 openGraph={{
                     images: [
                         {
-                            url: "https://www.fikriweb.dev/api/og?title=UI Recipes",
+                            url: `https://www.fikriweb.dev/api/og?title=${encodeURI(
+                                "UI Recipes"
+                            )}`,
                         },
                     ],
                 }}

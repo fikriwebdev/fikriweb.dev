@@ -13,7 +13,7 @@ export default function ViewBlogs({ blogs }: { blogs: Blog[] }) {
                 openGraph={{
                     images: [
                         {
-                            url: "https://www.fikriweb.dev/api/og?title=Blogs",
+                            url: "https://www.fikriweb.dev/api/og?title=Blog",
                         },
                     ],
                 }}

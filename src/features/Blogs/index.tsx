@@ -2,10 +2,15 @@ import Heading from "@/components/Heading";
 import BlogCard from "@/components/shared/BlogCard";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
 import { Blog } from "contentlayer/generated";
+import { NextSeo } from "next-seo";
 
 export default function ViewBlogs({ blogs }: { blogs: Blog[] }) {
     return (
         <>
+            <NextSeo
+                title="Blog"
+                description="Everything about my journey, story and tutorials about programming especially front-end."
+            />
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
                 <RightTopSideBlurryShape />
 

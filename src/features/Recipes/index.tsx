@@ -2,10 +2,16 @@ import Heading from "@/components/Heading";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
 import RecipeCard from "./components/RecipeCard";
 import { Recipe } from "contentlayer/generated";
+import { NextSeo } from "next-seo";
 
 export default function ViewRecipes({ recipes }: { recipes: Recipe[] }) {
     return (
         <>
+            <NextSeo
+                title="UI Recipes"
+                description="Documentation of my learning creating component that
+                inspired with another website or app."
+            />
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
                 <RightTopSideBlurryShape />
 

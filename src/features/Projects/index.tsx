@@ -10,6 +10,13 @@ export default function ViewProjects({ projects }: { projects: Project[] }) {
             <NextSeo
                 title="Projects"
                 description="Discover a showcase of projects that we are proud to present."
+                openGraph={{
+                    images: [
+                        {
+                            url: "https://www.fikriweb.dev/api/og?title=Projects",
+                        },
+                    ],
+                }}
             />
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
                 <RightTopSideBlurryShape />

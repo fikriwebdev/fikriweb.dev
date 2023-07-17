@@ -10,6 +10,13 @@ export default function ViewBlogs({ blogs }: { blogs: Blog[] }) {
             <NextSeo
                 title="Blog"
                 description="Everything about my journey, story and tutorials about programming especially front-end."
+                openGraph={{
+                    images: [
+                        {
+                            url: "https://www.fikriweb.dev/api/og?title=Blogs",
+                        },
+                    ],
+                }}
             />
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
                 <RightTopSideBlurryShape />

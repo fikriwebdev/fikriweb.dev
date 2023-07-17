@@ -11,6 +11,13 @@ export default function ViewRecipes({ recipes }: { recipes: Recipe[] }) {
                 title="UI Recipes"
                 description="Documentation of my learning creating component that
                 inspired with another website or app."
+                openGraph={{
+                    images: [
+                        {
+                            url: "https://www.fikriweb.dev/api/og?title=UI Recipes",
+                        },
+                    ],
+                }}
             />
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
                 <RightTopSideBlurryShape />

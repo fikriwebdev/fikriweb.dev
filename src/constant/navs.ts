@@ -15,15 +15,6 @@ const navs = [
         label: "UI Recipes",
         href: "/recipes",
     },
-    // will add this page later
-    // {
-    //     label: "Templates",
-    //     href: "/templates",
-    // },
-    {
-        label: "About",
-        href: "/about",
-    },
 ];
 
 export default navs;

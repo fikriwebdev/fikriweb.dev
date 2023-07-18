@@ -1,4 +1,26 @@
-/* eslint-disable jsx-a11y/alt-text */
+---
+title: "Reusable Button"
+date: "18 July 2023"
+description: "Create reusable button that support multi variants"
+stack: "tailwindcss, framer-motion, class-variance-authority"
+filename: "button"
+---
+
+When I opened WhatsApp Web, I became curious about how to create an animated dropdown menu when clicking a file button. To achieve this, I used the radix-ui dropdown component to ensure full accessibility by keyboard and animated it with framer-motion. Here is the component that I created:
+
+<Container>
+    <Button>Button</Button>
+</Container>
+
+## Install dependecies
+
+```terminal
+npm install @radix-ui/dropdown-menu framer-motion tailwindcss lucid-react
+```
+
+## Code
+
+```tsx
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 
@@ -122,9 +144,9 @@ export default function WhatsappFileMenu() {
             <DropdownMenu.Trigger asChild>
                 <button
                     aria-label="open dropdown"
-                    className="w-10 h-10 rounded-full m-0 p-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center transition-colors hover:bg-gray-300 dark:hover:bg-gray-800"
+                    className="w-10 h-10 rounded-full m-0 p-0 bg-gray-500 dark:bg-gray-700 flex items-center justify-center"
                 >
-                    <Paperclip className="w-5 h-5 text-black/90 dark:text-white" />
+                    <Paperclip className="w-5 h-5 text-white" />
                 </button>
             </DropdownMenu.Trigger>
             {/* Use <AnimatePresence/> to allows components to animate out when they're removed from the React tree. */}
@@ -148,3 +170,6 @@ export default function WhatsappFileMenu() {
         </DropdownMenu.Root>
     );
 }
+```
+
+Embarking on this project was a rewarding experience, as I successfully crafted an animated dropdown menu inspired by WhatsApp's file menu. By utilizing the powerful combination of radix-ui dropdown, tailwindcss, and framer-motion, I ensured accessibility and added delightful animations to the interface. I'm excited to see how this new feature enhances the user experience. Should you have any suggestions or feedback, please don't hesitate to share. Happy coding!

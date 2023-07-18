@@ -1,19 +1,22 @@
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
 import mdxComponents from "@/components/MDXComponent";
+import Separator from "@/components/Separator";
 import BoxBorderAnimation from "@/components/shared/BoxBorderAnimation";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
 import { Recipe } from "contentlayer/generated";
 import { Share } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import Separator from "@/components/Separator";
 import { NextSeo } from "next-seo";
-import { components } from "@/components/shared/RecipeCard";
 
-function Components({ filename }: { filename: string }) {
+import WhatsappFileMenu from "@/components/shared/Recipes/WhatsappFileMenu";
+import ReusableButton from "@/components/shared/Recipes/Button";
+import { PropsWithChildren } from "react";
+
+function Container({ children }: PropsWithChildren) {
     return (
-        <div className="w-full flex items-center justify-center h-[200px] border border-gray-300 dark:border-gray-700 rounded-md bg-gray-200 dark:bg-gray-900 mb-4">
-            {components[filename as keyof typeof components]}
+        <div className="w-full flex items-center justify-center min-h-[200px] border border-gray-300 dark:border-gray-700 rounded-md bg-gray-200 dark:bg-gray-900 mb-4">
+            {children}
         </div>
     );
 }
@@ -39,9 +42,9 @@ export default function ViewRecipeDetails({ recipe }: { recipe: Recipe }) {
                     <MDXContent
                         components={{
                             ...mdxComponents,
-                            Components: () => (
-                                <Components filename={recipe.filename} />
-                            ),
+                            Container,
+                            WhatsappFileMenu,
+                            Button: ReusableButton,
                         }}
                     />
                 </section>

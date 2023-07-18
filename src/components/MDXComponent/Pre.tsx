@@ -36,25 +36,26 @@ const Pre = ({
 
     return (
         <>
-            <div className="bg-slate-700 w-full rounded-t-md flex items-center justify-between px-4 py-2">
-                <div className="flex items-center gap-2 text-white">
-                    {getIcons(lang || "")}
-                    {title}
+            <pre {...props}>
+                <div className="bg-gray-500 dark:bg-slate-700 w-full rounded-t-md flex items-center justify-between px-4 py-2 mb-2">
+                    <div className="flex items-center gap-2 text-white">
+                        {getIcons(lang || "")}
+                        {title}
+                    </div>
+                    <Button
+                        className="p-0 w-8 h-8 text-white"
+                        variant="outline"
+                        onClick={() => copy(raw || "")}
+                    >
+                        {value ? (
+                            <AiOutlineCheck className="text-md animate-checked" />
+                        ) : (
+                            <FiCopy className="text-md animate-checked" />
+                        )}
+                    </Button>
                 </div>
-                <Button
-                    className="p-0 w-8 h-8 text-white"
-                    variant="outline"
-                    onClick={() => copy(raw || "")}
-                >
-                    {value ? (
-                        <AiOutlineCheck className="text-md animate-checked" />
-                    ) : (
-                        <FiCopy className="text-md animate-checked" />
-                    )}
-                </Button>
-            </div>
-
-            <pre {...props}>{children}</pre>
+                {children}
+            </pre>
         </>
     );
 };

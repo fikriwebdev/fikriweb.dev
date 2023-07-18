@@ -62,7 +62,10 @@ export const Recipe = defineDocumentType(() => ({
 
 const rehypePrettyCodeOptions: Partial<Options> = {
     // use a prepackaged theme
-    theme: "github-dark",
+    theme: {
+        dark: "github-dark",
+        light: "github-light",
+    },
 };
 
 export default makeSource({

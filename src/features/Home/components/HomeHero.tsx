@@ -2,9 +2,7 @@ import Avatar from "@/components/Avatar";
 import Button from "@/components/Button";
 
 import Link from "next/link";
-import { AiFillGithub } from "react-icons/ai";
-import { BsArrowRightShort } from "react-icons/bs";
-import { CgFileDocument } from "react-icons/cg";
+import { Instagram, Github, ArrowRight } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -31,7 +29,7 @@ export default function Hero() {
                     <Link href="/blog">
                         <Button
                             rightIcon={
-                                <BsArrowRightShort className="text-xl transform group-hover:translate-x-1 transition-transform duration-300" />
+                                <ArrowRight className="text-xl transform group-hover:translate-x-1 transition-transform duration-300" />
                             }
                             className="group"
                         >
@@ -40,19 +38,23 @@ export default function Hero() {
                     </Link>
                 </div>
                 <div className="flex items-center gap-4 mt-4">
-                    <Link href="/">
-                        <div className="flex items-center gap-1 text-gray-500 font-medium hover:text-gray-600 transition-colors duration-500 dark:text-gray-300 dark:hover:text-gray-400">
-                            <CgFileDocument />
-                            <p>Resume</p>
+                    <a
+                        href="https://instagram.com/fikriwebdev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div className="flex items-center gap-2 text-gray-500 font-medium hover:text-gray-600 transition-colors duration-500 dark:text-gray-300 dark:hover:text-gray-400">
+                            <Instagram className="w-5 h-5" />
+                            <p>fikriwebdev</p>
                         </div>
-                    </Link>
+                    </a>
                     <a
                         href="https://github.com/muhamdfikrii"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <div className="flex items-center gap-1 text-gray-500 font-medium hover:text-gray-600 transition-colors duration-500 dark:text-gray-300 dark:hover:text-gray-400">
-                            <AiFillGithub />
+                        <div className="flex items-center gap-2 text-gray-500 font-medium hover:text-gray-600 transition-colors duration-500 dark:text-gray-300 dark:hover:text-gray-400">
+                            <Github className="w-5 h-5" />
                             <p>muhamdfikrii</p>
                         </div>
                     </a>

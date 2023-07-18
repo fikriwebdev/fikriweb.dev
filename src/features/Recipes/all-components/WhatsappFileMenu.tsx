@@ -1,7 +1,4 @@
 /* eslint-disable jsx-a11y/alt-text */
-import Button from "@/components/Button";
-import clsm from "@/utils/clsm";
-
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 
@@ -96,10 +93,9 @@ function MenuItem(item: (typeof items)[0] & { index: number }) {
                 }}
             >
                 <motion.button
-                    className={clsm(
-                        "w-14 h-14 rounded-full outline-none  flex items-center justify-center group-focus:outline group-focus:outline-2 relative group-focus:outline-offset-4 group-focus:outline-green-500/50 group select-none",
-                        item.color
-                    )}
+                    className={`
+                        w-14 h-14 rounded-full outline-none  flex items-center justify-center group-focus:outline group-focus:outline-2 relative group-focus:outline-offset-4 group-focus:outline-green-500/50 group select-none
+                        ${item.color}`}
                 >
                     {item.icon}
                 </motion.button>
@@ -124,9 +120,12 @@ export default function WhatsappFileMenu() {
             modal={false}
         >
             <DropdownMenu.Trigger asChild>
-                <Button className="w-10 h-10 rounded-full m-0 p-0">
-                    <Paperclip className="w-5 h-5" />
-                </Button>
+                <button
+                    aria-label="open dropdown"
+                    className="w-10 h-10 rounded-full m-0 p-0 bg-gray-500 dark:bg-gray-700 flex items-center justify-center"
+                >
+                    <Paperclip className="w-5 h-5 text-white" />
+                </button>
             </DropdownMenu.Trigger>
             {/* Use <AnimatePresence/> to allows components to animate out when they're removed from the React tree. */}
             <AnimatePresence mode="wait">

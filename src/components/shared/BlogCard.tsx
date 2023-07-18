@@ -3,6 +3,8 @@ import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 export default function BlogCard({
     title,
     description,
@@ -15,7 +17,7 @@ export default function BlogCard({
 
     return (
         <Link href={`${slug}`}>
-            <div className="w-full h-[23rem] border border-gray-100 dark:border-gray-800 rounded-md overflow-hidden relative  hover:border-gray-200 dark:hover:border-gray-700  bg-white dark:bg-gray-900 shadow-sm">
+            <motion.div className="w-full h-[23rem] border border-gray-100 dark:border-gray-800 rounded-md overflow-hidden relative  hover:border-gray-200 dark:hover:border-gray-700  bg-white dark:bg-gray-900 shadow-sm">
                 <div className="relative h-[50%] w-full">
                     <div className="relative w-full h-full">
                         <Image
@@ -50,7 +52,7 @@ text-gray-700 dark:text-gray-200  h-[50%]"
                         {description}
                     </p>
                 </div>
-            </div>
+            </motion.div>
         </Link>
     );
 }

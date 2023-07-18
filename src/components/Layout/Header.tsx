@@ -101,6 +101,8 @@ const Hamburger = () => {
 };
 
 export default function Header() {
+    const { theme } = useTheme();
+
     return (
         <header className="w-full fixed top-0 left-0 right-0 z-50 h-[var(--header-height)]">
             <div className="container max-w-full  h-full mx-auto px-4 md:px-0  relative">
@@ -108,13 +110,23 @@ export default function Header() {
                 <div className="absolute inset-0 flex items-center h-full justify-between  dark:border-gray-800/30 px-4 container md:max-w-7xl mx-auto">
                     <h1 className="w-6 text-transparent text-2xl font-extrabold bg-gradient-to-r from-cyan-500 to-green-500 bg-clip-text">
                         <Link href="/">
-                            <Image
-                                src="/assets/svg/logo.svg"
-                                width={100}
-                                height={100}
-                                alt="Logo"
-                                className="rounded-full overflow-hidden"
-                            />
+                            {theme === "light" ? (
+                                <Image
+                                    src={`/assets/svg/logo-light.svg`}
+                                    width={100}
+                                    height={100}
+                                    alt="Logo"
+                                    className="rounded-full overflow-hidden"
+                                />
+                            ) : (
+                                <Image
+                                    src={`/assets/svg/logo.svg`}
+                                    width={100}
+                                    height={100}
+                                    alt="Logo"
+                                    className="rounded-full overflow-hidden"
+                                />
+                            )}
                         </Link>
                     </h1>
                     <ul className="items-center gap-8 hidden md:flex">

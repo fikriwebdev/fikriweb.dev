@@ -39,7 +39,7 @@ export default function Hero() {
                 </div>
                 <div className="flex items-center gap-4 mt-4">
                     <a
-                        href="https://instagram.com/fikriwebdev"
+                        href="https://instagram.com/fikriweb.dev"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

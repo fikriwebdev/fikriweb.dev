@@ -16,7 +16,7 @@ export default function Hero() {
                     className="shadow-lg"
                     alt="Avatar"
                 />
-                <h1 className="text-base text-gray-400 font-semibold">
+                <h1 className="text-base text-black dark:text-gray-400 font-semibold">
                     Hello, I&apos;m Fikri 👋
                 </h1>
                 <p className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black dark:from-white to-gray-500  dark:to-gray-500 text-center">

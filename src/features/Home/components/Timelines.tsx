@@ -26,7 +26,7 @@ const Timeline = ({ years, title, description }: TimelineProps) => {
                     <h1 className="font-medium mb-2 text-base md:text-lg">
                         {title}
                     </h1>
-                    <p className="text-sm md:text-base text-gray-700 dark:text-gray-300">
+                    <p className="text-sm  text-gray-700 dark:text-gray-300">
                         {description}
                     </p>
                 </div>

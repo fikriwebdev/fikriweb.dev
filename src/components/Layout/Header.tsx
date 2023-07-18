@@ -55,7 +55,7 @@ const NavItem = ({
         <li
             key={href}
             className={clsm(
-                "text-sm text-white hover:underline transition-colors duration-300",
+                "text-sm text-black/90 dark:text-white hover:underline transition-colors duration-300 font-medium",
                 isActive ? "underline" : "",
                 className
             )}

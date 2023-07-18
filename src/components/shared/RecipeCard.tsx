@@ -1,11 +1,15 @@
 import { Recipe } from "contentlayer/generated";
 import Link from "next/link";
-import { components } from "./RecipeComponents";
+import WhatsappFileMenu from "./Recipes/WhatsappFileMenu";
+
+export const components = {
+    "whatsapp-file-menu": <WhatsappFileMenu />,
+};
 
 export default function RecipeCard({ title, description, filename }: Recipe) {
     return (
-        <div className="w-full h-[23rem]  rounded-md relative">
-            <div className="w-full h-full rounded-md bg-gradient-to-br from-purple-700/20 to-blue-700/20 flex items-center justify-center">
+        <div className="w-full   rounded-md  ">
+            <div className="w-full h-[23rem] bg-gray-900  rounded-md bg-gradient-to-br from-purple-300/80 to-blue-300/80 dark:from-purple-700/20 dark:to-blue-700/20 flex items-center justify-center">
                 {components[filename as keyof typeof components]}
             </div>
             <Link href={`/recipes/${filename}`}>

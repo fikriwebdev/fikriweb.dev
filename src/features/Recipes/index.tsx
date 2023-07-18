@@ -1,6 +1,6 @@
 import Heading from "@/components/Heading";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
-import RecipeCard from "./components/RecipeCard";
+import RecipeCard from "../../components/shared/RecipeCard";
 import { Recipe } from "contentlayer/generated";
 import { NextSeo } from "next-seo";
 

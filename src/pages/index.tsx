@@ -1,13 +1,14 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import ViewHome from "../features/Home";
-import { allBlogs, allProjects } from "contentlayer/generated";
+import { allBlogs, allProjects, allRecipes } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 
 export default function Home({
     blogs,
     projects,
+    recipes,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-    return <ViewHome blogs={blogs} projects={projects} />;
+    return <ViewHome blogs={blogs} projects={projects} recipes={recipes} />;
 }
 
 export const getStaticProps: GetStaticProps = () => {
@@ -18,10 +19,15 @@ export const getStaticProps: GetStaticProps = () => {
         compareDesc(new Date(a.date), new Date(b.date))
     );
 
+    const recipes = allRecipes.sort((a, b) =>
+        compareDesc(new Date(a.date), new Date(b.date))
+    );
+
     return {
         props: {
             blogs,
             projects,
+            recipes,
         },
     };
 };

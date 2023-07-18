@@ -6,9 +6,9 @@ import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape
 import { Recipe } from "contentlayer/generated";
 import { Share } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { components } from "./components/RecipeComponents";
 import Separator from "@/components/Separator";
 import { NextSeo } from "next-seo";
+import { components } from "@/components/shared/RecipeCard";
 
 function Components({ filename }: { filename: string }) {
     return (

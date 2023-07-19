@@ -2,10 +2,12 @@ import { Recipe } from "contentlayer/generated";
 import Link from "next/link";
 import WhatsappFileMenu from "./Recipes/WhatsappFileMenu";
 import Button from "./Recipes/Button";
+import Tabs from "./Recipes/AnimatedTabs";
 
 export const components = {
     "whatsapp-file-menu": <WhatsappFileMenu />,
     button: <Button variant="filled-secondary">Reusable Button</Button>,
+    tabs: <Tabs />,
 };
 
 export default function RecipeCard({ title, description, filename }: Recipe) {

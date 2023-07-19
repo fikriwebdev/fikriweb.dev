@@ -12,9 +12,7 @@
   }
    
   div[data-rehype-pretty-code-fragment] pre {
-
-    @apply overflow-x-auto pb-2 leading-6 text-xs;
-
+    @apply overflow-x-auto pb-2 leading-6 text-xs  overflow-y-auto max-h-[400px];
   }
 
 

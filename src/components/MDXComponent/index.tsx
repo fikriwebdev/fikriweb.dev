@@ -12,7 +12,10 @@ const H2 = ({
     return (
         <Heading
             as="h2"
-            className={clsm("mb-6  inline-block text-base", className)}
+            className={clsm(
+                "mb-6  inline-block text-base pt-[70px] -mt-[70px] relative -z-50",
+                className
+            )}
             {...props}
             id={id}
         >

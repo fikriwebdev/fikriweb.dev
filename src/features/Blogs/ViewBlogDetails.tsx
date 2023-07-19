@@ -6,13 +6,13 @@ import Separator from "@/components/Separator";
 import BlogCard from "@/components/shared/BlogCard";
 import BoxBorderAnimation from "@/components/shared/BoxBorderAnimation";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
-import { format, parseISO } from "date-fns";
-import Image from "next/image";
-import { AiOutlineShareAlt } from "react-icons/ai";
-import OnThisPage from "./components/OnThisPage";
 import { Blog } from "contentlayer/generated";
+import { format, parseISO } from "date-fns";
+import { Share2 } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
+import Image from "next/image";
+import OnThisPage from "./components/OnThisPage";
 
 interface ViewBlogDetailsProps {
     blog: Blog;
@@ -96,9 +96,7 @@ export default function ViewBlogDetails({
                                 {blog.title}, and I hope it helps you in your
                                 development journey!
                             </p>
-                            <Button rightIcon={<AiOutlineShareAlt />}>
-                                Share Blog
-                            </Button>
+                            <Button rightIcon={<Share2 />}>Share Blog</Button>
                         </div>
                     </BoxBorderAnimation>
                 </div>

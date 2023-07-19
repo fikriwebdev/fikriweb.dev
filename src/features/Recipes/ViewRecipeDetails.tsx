@@ -5,7 +5,7 @@ import Separator from "@/components/Separator";
 import BoxBorderAnimation from "@/components/shared/BoxBorderAnimation";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
 import { Recipe } from "contentlayer/generated";
-import { Share } from "lucide-react";
+import { Share2 } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
 
@@ -63,7 +63,7 @@ export default function ViewRecipeDetails({ recipe }: { recipe: Recipe }) {
                                 {recipe.title}, and I hope it helps you in your
                                 development journey!
                             </p>
-                            <Button rightIcon={<Share />}>Share Blog</Button>
+                            <Button rightIcon={<Share2 />}>Share Blog</Button>
                         </div>
                     </BoxBorderAnimation>
                 </div>

@@ -24,6 +24,7 @@ export default function BlogCard({
                             src={image}
                             alt="test"
                             fill
+                            placeholder="blur"
                             style={{ objectFit: "cover" }}
                         />
                     </div>

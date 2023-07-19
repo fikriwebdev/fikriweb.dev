@@ -12,10 +12,7 @@ const H2 = ({
     return (
         <Heading
             as="h2"
-            className={clsm(
-                "mb-6 pt-[8rem] -mt-[8rem] inline-block text-base",
-                className
-            )}
+            className={clsm("mb-6  inline-block text-base", className)}
             {...props}
             id={id}
         >
@@ -38,10 +35,7 @@ const H3 = ({
     return (
         <Heading
             as="h3"
-            className={clsm(
-                "mb-6 pt-[8rem] -mt-[8rem] inline-block text-sm",
-                className
-            )}
+            className={clsm("mb-6  inline-block text-sm", className)}
             {...props}
             id={id}
         >

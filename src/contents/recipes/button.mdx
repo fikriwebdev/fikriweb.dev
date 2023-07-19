@@ -1,175 +1,199 @@
 ---
 title: "Reusable Button"
 date: "18 July 2023"
-description: "Create reusable button that support multi variants"
+description: "Create reusable button that support multi variants with tailwindcss & class-variance-authority"
 stack: "tailwindcss, framer-motion, class-variance-authority"
 filename: "button"
 ---
 
-When I opened WhatsApp Web, I became curious about how to create an animated dropdown menu when clicking a file button. To achieve this, I used the radix-ui dropdown component to ensure full accessibility by keyboard and animated it with framer-motion. Here is the component that I created:
+## Usage
+
+```tsx
+<div className="flex flex-col gap-4 items-start p-4  w-full">
+    <div className="flex items-center gap-4">
+        {/* filled */}
+        <Button>Default</Button>
+        <Button variant="filled-secondary">Secondary</Button>
+        <Button variant="filled-danger">Danger</Button>
+        <Button variant="filled-warning">Warning</Button>
+        <Button variant="filled-success">Success</Button>
+    </div>
+    <div className="flex items-center gap-4">
+        {/* outline */}
+        <Button variant="outline">Outline</Button>
+        <Button variant="outline-secondary">Outline</Button>
+        <Button variant="outline-danger">Outline</Button>
+        <Button variant="outline-warning">Outline</Button>
+        <Button variant="outline-success">Outline</Button>
+    </div>
+    <div className="flex items-center gap-4">
+        {/* ghost */}
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="ghost-secondary">Ghost</Button>
+        <Button variant="ghost-danger">Ghost</Button>
+        <Button variant="ghost-warning">Ghost</Button>
+        <Button variant="ghost-success">Ghost</Button>
+    </div>
+    <div className="flex items-center gap-4">
+        {/* With icon */}
+        <Button>
+            <Settings className="w-4 h-4" /> Settings
+        </Button>
+        <Button>
+            Continue <ArrowRight className="w-4 h-4" />
+        </Button>
+
+        {/* Loading and disable state*/}
+        <Button disabled>Disabled</Button>
+        <Button isLoading>Disabled</Button>
+        <Button
+            isLoading
+            spinner={<Loader className="w-4 h-4" />}
+            loadingText="Saving..."
+        >
+            Disabled
+        </Button>
+    </div>
+</div>
+```
 
 <Container>
-    <Button>Button</Button>
+    <PreviewButton />
 </Container>
 
 ## Install dependecies
 
 ```terminal
-npm install @radix-ui/dropdown-menu framer-motion tailwindcss lucid-react
+npm install tailwindcss class-variance-authority lucid-react
 ```
 
 ## Code
 
 ```tsx
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { AnimatePresence, motion, type Variants } from "framer-motion";
+import clsm from "@/utils/clsm";
+import { cva, VariantProps } from "class-variance-authority";
+import { Loader2 } from "lucide-react";
+import React, { PropsWithChildren } from "react";
 
-import { Camera, File, Image, Paperclip, Sticker } from "lucide-react";
-import React from "react";
-
-// variants for animating the menu
-const variants: Variants = {
-    initial: {
-        scale: 0,
-        opacity: 0,
-        x: 0,
-        y: 50,
-    },
-    animate: {
-        scale: 1,
-        opacity: 1,
-        x: 0,
-        y: 0,
-    },
-    exit: {
-        scale: 0,
-        opacity: 0,
-        x: 0,
-        y: 50,
-    },
-    hover: {
-        opacity: 1,
-    },
-};
-
-// variants for animating the tooltip
-const tooltipVariants: Variants = {
-    initial: {
-        scale: 0,
-        opacity: 0,
-    },
-    animate: {
-        scale: 0,
-        opacity: 0,
-        y: 0,
-    },
-    exit: {
-        scale: 0,
-        opacity: 0,
-        y: 50,
-    },
-    hover: {
-        scale: 1,
-        opacity: 1,
-    },
-};
-
-const items = [
+const buttonVariants = cva(
+    "inline-flex items-center justify-center rounded-md text-sm font-medium cursor-pointer disabled:opacity-70 dark:disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2  active:scale-95 gap-2 ring-offset-white dark:focus:ring-offset-gray-900",
     {
-        label: "Photo & Video",
-        icon: <Image className="w-6 h-6 text-white" />,
-        color: "bg-purple-500",
-    },
-    {
-        label: "Stiker",
-        icon: <Sticker className="w-6 h-6 text-white" />,
-        color: "bg-blue-500",
-    },
-    {
-        label: "Camera",
-        icon: <Camera className="w-6 h-6 text-white" />,
-        color: "bg-pink-500",
-    },
-    {
-        label: "File",
-        icon: <File className="w-6 h-6 text-white" />,
-        color: "bg-indigo-500",
-    },
-];
+        variants: {
+            size: {
+                sm: "h-9 px-4 py-2",
+                md: "h-10 px-5 py-2",
+                lg: "h-11 px-8 py-2",
+                // ...another size
+            },
 
-function MenuItem(item: (typeof items)[0] & { index: number }) {
+            variant: {
+                // filled variants
+                filled: "bg-blue-500 border-blue-300 hover:bg-blue-600  border border-blue-500  text-white focus:ring-blue-400  dark:bg-blue-700 dark:hover:bg-blue-800",
+                "filled-secondary":
+                    "bg-gray-500 text-white border-gray-500 hover:bg-gray-300 dark:bg-gray-700 border dark:border-gray-600 dark:hover:bg-gray-800 dark:text-white focus:ring-slate-400 ",
+                "filled-danger":
+                    "bg-red-500 borde-red-300 text-white hover:bg-red-600 focus:ring-red-400 dark:bg-red-600 dark:hover:bg-red-700",
+                "filled-warning":
+                    "bg-yellow-500 borde-yellow-300 text-white hover:bg-yellow-600 focus:ring-yellow-400 dark:bg-yellow-600 dark:hover:bg-yellow-700",
+                "filled-success":
+                    "bg-emerald-500 borde-emerald-300 text-white hover:bg-emerald-600 focus:ring-emerald-400 dark:bg-emerald-600 dark:hover:bg-emerald-700",
+
+                // outline variants
+                outline:
+                    "bg-transparent text-blue-500 border-blue-500 hover:bg-blue-500/20  border   text-blue-500 focus:ring-blue-400",
+                "outline-secondary":
+                    "bg-transparent text-gray-500 border-gray-500 dark:text-gray-300 dark:border-gray-300 hover:bg-gray-300/20 dark:hover:bg-gray-500/20  border   focus:ring-slate-400",
+                "outline-danger":
+                    "bg-transparent text-black/90 border-red-300 hover:bg-red-500/20  border dark:border-red-600 text-red-500  focus:ring-red-400",
+                "outline-warning":
+                    "bg-transparent border border-yellow-300 text-yellow-500 hover:bg-yellow-500/20 focus:ring-yellow-400",
+                "outline-success":
+                    "bg-transparent border border-emerald-300 text-white hover:bg-emerald-500/20 focus:ring-emerald-400 text-emerald-500",
+
+                // ghost variants
+                ghost: "bg-transparent hover:bg-blue-500  hover:bg-blue-600 text-blue-500 hover:text-white focus:ring-blue-400  dark:hover:bg-blue-700",
+                "ghost-secondary":
+                    "bg-transparent text-gray-500 hover:text-white  hover:bg-gray-500 focus:ring-gray-400 dark:hover:bg-gray-600",
+                "ghost-danger":
+                    "bg-transparent text-red-500 hover:text-white  hover:bg-red-500 focus:ring-red-400 dark:hover:bg-red-600",
+                "ghost-warning":
+                    "bg-transparent text-yellow-500 hover:text-white hover:bg-yellow-500 focus:ring-yellow-400  dark:hover:bg-yellow-600",
+                "ghost-success":
+                    "bg-transparent text-emerald-500 hover:text-white hover:bg-emerald-500 focus:ring-emerald-400  dark:hover:bg-emerald-600",
+
+                // ... another variants
+            },
+        },
+        defaultVariants: {
+            size: "md",
+            variant: "filled",
+        },
+    }
+);
+
+function Spinner({ children }: PropsWithChildren) {
     return (
-        <DropdownMenu.Item asChild>
-            <motion.div
-                variants={variants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                whileHover="hover"
-                whileFocus="hover"
-                className="outline-none group  flex  items-center"
-                transition={{
-                    delay: (5 - item.index) * 0.02,
-                    type: "spring",
-                    bounce: 0.5,
-                }}
+        <span className="animate-spin" role="progressbar">
+            {children}
+        </span>
+    );
+}
+
+export interface ButtonProps
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+        VariantProps<typeof buttonVariants> {
+    leftIcon?: React.ReactNode;
+    rightIcon?: React.ReactNode;
+    isLoading?: boolean;
+    loadingText?: string;
+    spinner?: React.ReactNode;
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+    (props, ref) => {
+        const {
+            className,
+            size,
+            variant,
+            leftIcon,
+            rightIcon,
+            isLoading,
+            disabled,
+            children,
+            loadingText = "Loading...",
+            spinner,
+            ...rest
+        } = props;
+        return (
+            <button
+                className={clsm(
+                    buttonVariants({
+                        className,
+                        size,
+
+                        variant,
+                    })
+                )}
+                ref={ref}
+                disabled={isLoading || disabled}
+                {...rest}
             >
-                <motion.button
-                    className={`
-                        w-14 h-14 rounded-full outline-none  flex items-center justify-center group-focus:outline group-focus:outline-2 relative group-focus:outline-offset-4 group-focus:outline-green-500/50 group select-none
-                        ${item.color}`}
-                >
-                    {item.icon}
-                </motion.button>
-                <motion.span
-                    className="bg-white absolute left-[60%] text-black rounded-full px-4 text-sm  py-1"
-                    variants={tooltipVariants}
-                >
-                    {item.label}
-                </motion.span>
-            </motion.div>
-        </DropdownMenu.Item>
-    );
-}
-
-export default function WhatsappFileMenu() {
-    const [open, setOpen] = React.useState(false);
-
-    return (
-        <DropdownMenu.Root
-            open={open}
-            onOpenChange={open => setOpen(open)}
-            modal={false}
-        >
-            <DropdownMenu.Trigger asChild>
-                <button
-                    aria-label="open dropdown"
-                    className="w-10 h-10 rounded-full m-0 p-0 bg-gray-500 dark:bg-gray-700 flex items-center justify-center"
-                >
-                    <Paperclip className="w-5 h-5 text-white" />
-                </button>
-            </DropdownMenu.Trigger>
-            {/* Use <AnimatePresence/> to allows components to animate out when they're removed from the React tree. */}
-            <AnimatePresence mode="wait">
-                {open ? (
-                    // use forceMount to allow consumers to delegate the mounting and unmounting of children based on the animation state determined by those libraries. See here: https://www.radix-ui.com/docs/primitives/guides/animation
-                    <DropdownMenu.Portal forceMount>
-                        <DropdownMenu.Content
-                            forceMount
-                            loop
-                            side="top"
-                            className="flex flex-col gap-4 mb-4 w-screen md:w-[450px] items-center relative"
-                        >
-                            {items.map((item, i) => (
-                                <MenuItem key={i} {...item} index={i} />
-                            ))}
-                        </DropdownMenu.Content>
-                    </DropdownMenu.Portal>
+                {isLoading ? (
+                    <Spinner>
+                        {spinner ? spinner : <Loader2 className="w-4 h-4" />}
+                    </Spinner>
                 ) : null}
-            </AnimatePresence>
-        </DropdownMenu.Root>
-    );
-}
+                {leftIcon && !isLoading ? leftIcon : null}
+                {isLoading ? loadingText : children}
+                {rightIcon && !isLoading ? rightIcon : null}
+            </button>
+        );
+    }
+);
+
+Button.displayName = "Button";
+
+export default Button;
 ```
 
-Embarking on this project was a rewarding experience, as I successfully crafted an animated dropdown menu inspired by WhatsApp's file menu. By utilizing the powerful combination of radix-ui dropdown, tailwindcss, and framer-motion, I ensured accessibility and added delightful animations to the interface. I'm excited to see how this new feature enhances the user experience. Should you have any suggestions or feedback, please don't hesitate to share. Happy coding!
+That's it! feel free to customize the style based on your requirements.

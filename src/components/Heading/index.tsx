@@ -5,9 +5,9 @@ import React, { ComponentPropsWithRef } from "react";
 const headingVariants = cva("leading-4", {
     variants: {
         as: {
-            h1: "text-2xl md:text-3xl",
-            h2: "text-xl md:text-2xl",
-            h3: "text-lg md:text-xl",
+            h1: "text-xl md:text-2xl",
+            h2: "text-lg md:text-xl",
+            h3: "text-base md:text-lg",
             h4: "text-base md:text-lg",
             h5: "text-sm md:text-base",
             h6: "text-xs md:text-sm",

@@ -19,15 +19,17 @@
 
   div[data-rehype-pretty-code-title] {
     /* @apply bg-gray-800 px-4 py-3 rounded-t-md text-gray-300 font-light; */
-    @apply absolute top-[14px] left-12 text-black/90 dark:text-white font-light text-sm;
+    @apply absolute top-[14px] left-12 text-white font-light text-sm z-10; 
   }
 
-code {
+pre  code {
     counter-reset: line;
-
+    background-color: transparent !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
   }
    
-  code > .line::before {
+  pre  code > .line::before {
     counter-increment: line;
     content: counter(line);
     
@@ -40,11 +42,11 @@ code {
     color: gray;
   }
    
-  code[data-line-numbers-max-digits="2"] > .line::before {
+  pre>code[data-line-numbers-max-digits="2"] > .line::before {
     width: 2rem;
   }
    
-  code[data-line-numbers-max-digits="3"] > .line::before {
+  pre > code[data-line-numbers-max-digits="3"] > .line::before {
     width: 3rem;
   }
 
@@ -52,8 +54,14 @@ code {
       display: none; 
   }
 
+  html.light div[data-rehype-pretty-code-title][data-theme='dark'] {
+    display: none;
+  }
 
-   
+  html.dark div[data-rehype-pretty-code-title][data-theme='light'] {
+    display: none;
+  }
+
 
   html.dark pre[data-theme='light']  {
     display: none;

@@ -1,7 +1,8 @@
 // contentlayer.config.ts
 import { defineDocumentType, makeSource } from "@contentlayer/source-files";
 import rehypePrettyCode, { Options } from "rehype-pretty-code";
-import { visit } from "unist-util-visit";
+
+const CONTENT_FOLDER = "src/contents";
 
 export const Blog = defineDocumentType(() => ({
     name: "Blog",
@@ -12,12 +13,14 @@ export const Blog = defineDocumentType(() => ({
         date: { type: "date", required: true },
         description: { type: "string", required: true },
         image: { type: "string", required: true },
+        blurDataUrl: { type: "string", required: true },
         tags: { type: "string", required: true },
     },
     computedFields: {
         url: {
             type: "string",
-            resolve: post => `src/contents/blog/${post._raw.flattenedPath}`,
+            resolve: post =>
+                `${CONTENT_FOLDER}/blog/${post._raw.flattenedPath}`,
         },
     },
 }));
@@ -36,7 +39,8 @@ export const Project = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: "string",
-            resolve: post => `src/contents/projects/${post._raw.flattenedPath}`,
+            resolve: post =>
+                `${CONTENT_FOLDER}/projects/${post._raw.flattenedPath}`,
         },
     },
 }));
@@ -55,7 +59,8 @@ export const Recipe = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: "string",
-            resolve: post => `src/contents/recipes/${post._raw.flattenedPath}`,
+            resolve: post =>
+                `${CONTENT_FOLDER}/recipes/${post._raw.flattenedPath}`,
         },
     },
 }));
@@ -69,42 +74,9 @@ const rehypePrettyCodeOptions: Partial<Options> = {
 };
 
 export default makeSource({
-    contentDirPath: "src/contents",
+    contentDirPath: `${CONTENT_FOLDER}`,
     documentTypes: [Blog, Project, Recipe],
     mdx: {
-        rehypePlugins: [
-            () => tree => {
-                visit(tree, node => {
-                    if (node?.type === "element" && node?.tagName === "pre") {
-                        const [codeEl] = node.children;
-
-                        if (codeEl.tagName !== "code") return;
-
-                        node.raw = codeEl.children?.[0].value;
-                    }
-                });
-            },
-            [rehypePrettyCode, rehypePrettyCodeOptions],
-            () => tree => {
-                visit(tree, node => {
-                    if (node?.type === "element" && node?.tagName === "div") {
-                        if (
-                            !(
-                                "data-rehype-pretty-code-fragment" in
-                                node.properties
-                            )
-                        ) {
-                            return;
-                        }
-
-                        for (const child of node.children) {
-                            if (child.tagName === "pre") {
-                                child.properties["raw"] = node.raw;
-                            }
-                        }
-                    }
-                });
-            },
-        ],
+        rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
     },
 });

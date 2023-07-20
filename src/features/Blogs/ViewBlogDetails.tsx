@@ -1,4 +1,5 @@
 import AspectRatio from "@/components/AspectRatio";
+import BlurryImage from "@/components/BlurryImage";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
 import mdxComponents from "@/components/MDXComponent";
@@ -11,14 +12,37 @@ import { format, parseISO } from "date-fns";
 import { Share2 } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
-import Image from "next/image";
 import OnThisPage from "./components/OnThisPage";
+import { ImageProps } from "next/image";
+import clsm from "@/utils/clsm";
 
 interface ViewBlogDetailsProps {
     blog: Blog;
     recommendations: Blog[];
     tags: string[];
 }
+
+type BlogImageProps = ImageProps & {
+    blurSrc: string;
+};
+
+const BlogImage = ({ blurSrc, className, ...rest }: BlogImageProps) => {
+    return (
+        <div
+            className={clsm(
+                "w-full h-[300px] relative rounded-md overflow-hidden mb-4",
+                className
+            )}
+        >
+            <BlurryImage
+                blurSrc={blurSrc}
+                fill
+                className="object-cover object-conter"
+                {...rest}
+            />
+        </div>
+    );
+};
 
 export default function ViewBlogDetails({
     blog,
@@ -51,7 +75,8 @@ export default function ViewBlogDetails({
                             ratio={16 / 5}
                             className="rounded-md overflow-hidden mb-4 relative"
                         >
-                            <Image
+                            <BlurryImage
+                                blurSrc={blog.blurDataUrl}
                                 src={blog.image}
                                 alt={blog.title}
                                 fill
@@ -80,7 +105,12 @@ export default function ViewBlogDetails({
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
                         <div className="block col-span-1 md:col-span-4">
-                            <MDXContent components={mdxComponents} />
+                            <MDXContent
+                                components={{
+                                    ...mdxComponents,
+                                    Image: BlogImage,
+                                }}
+                            />
                         </div>
                         <div className="col-span-2 hidden md:block">
                             <OnThisPage />

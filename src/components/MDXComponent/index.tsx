@@ -13,7 +13,7 @@ const H2 = ({
         <Heading
             as="h2"
             className={clsm(
-                "mb-6  inline-block text-base pt-[70px] -mt-[70px] relative -z-50",
+                "mb-6 text-base scroll-mt-[100px]  relative",
                 className
             )}
             {...props}
@@ -38,7 +38,7 @@ const H3 = ({
     return (
         <Heading
             as="h3"
-            className={clsm("mb-6  inline-block text-sm", className)}
+            className={clsm("mb-6 scroll-mt-[100px]  text-sm", className)}
             {...props}
             id={id}
         >
@@ -70,7 +70,7 @@ const mdxComponents = {
     p: ({ className, ...props }: ComponentPropsWithoutRef<"p">) => (
         <p
             className={clsm(
-                "mb-8 text-gray-500 dark:text-gray-200 text-sm md:text-base font-light",
+                "mb-8 text-gray-500 dark:text-white/70 text-sm md:text-base font-light",
                 className
             )}
             {...props}
@@ -89,6 +89,12 @@ const mdxComponents = {
             rel="noopener noreferrer"
             className="relative p-[1px] -m-[1px] font-medium text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-600"
             {...props}
+        />
+    ),
+    code: (props: ComponentPropsWithoutRef<"code">) => (
+        <code
+            {...props}
+            className="bg-gray-300 dark:bg-gray-700 p-1 rounded-md font-light text-sm md:text-base"
         />
     ),
 };

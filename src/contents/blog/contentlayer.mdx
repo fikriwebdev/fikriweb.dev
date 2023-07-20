@@ -1,0 +1,200 @@
+---
+title: "How to create blog using nextjs and contentlayer"
+date: "19 July2023"
+description: "Create blog using contentlayer that support typesafe under the hood"
+image: "/assets/images/contentlayer.jpg"
+blurDataUrl: "/assets/images/contentlayer-small.jpg"
+tags: "nextjs,contentlayer"
+---
+
+Contentlayer is a library that can validate your content, and give us a good developer experience while using it. I personally use this library to create blog content on this website. Here I will explain how you can start creating your blog with this library with nextjs (v13.4).
+
+Before we start, i want to let you know that i'm using `src` folder.
+
+## 1. Setup Contentlayer on your existing project
+
+### Instal dependencies
+
+Install contentlayer and next-conterlayer dependencies
+
+```terminal
+npm i contentlayer next-contentlayer
+```
+
+### Setup contentlayer on next.config.js
+
+Setup next.config.js to make contentlayer work with nextjs
+
+```js title="next.config.js"
+const { withContentlayer } = require("next-contentlayer");
+
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
+    reactStrictMode: true,
+    swcMinify: true,
+};
+
+module.exports = withContentlayer(nextConfig);
+```
+
+### Setup contentlayer on tsconfig.json
+
+To make it easier to import your content data, we need to do configuration at tsconfig.json
+
+```json title="tsconfig.json"
+{
+    "compilerOptions": {
+        ....
+        "baseUrl": ".",
+        "paths": {
+            .....,
+            // add this
+            "contentlayer/generated": ["./.contentlayer/generated"]
+        },
+
+    },
+    "include": [
+        ....
+         // add this
+        ".contentlayer/generated"
+    ],
+    "exclude": ["node_modules"]
+}
+
+```
+
+### Ignore .contentlayer directory
+
+contentlayer will generate your content each build, so to make sure you get the latest generated content, we will ignore it on .gitigone
+
+```git title=".gitignore"
+# contentlayer
+.contentlayer
+```
+
+## 2. Defining schema
+
+### Create file contentlayer.config.ts in your root project
+
+In this file, you can add your content schema. This schema its to validate your content and make sure what you get is what you need. We will cover it later.
+
+```ts title="root/contentlayer.config.ts"
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
+
+const CONTENT_PATH = "src/contents";
+
+export const Post = defineDocumentType(() => ({
+    name: "Post",
+    filePathPattern: `**/*.mdx`,
+    fields: {
+        title: { type: "string", required: true },
+        date: { type: "date", required: true },
+        description: { type: "string", required: true },
+    },
+    contentType: "mdx",
+    computedFields: {
+        url: {
+            type: "string",
+            resolve: post => `${CONTENT_PATH}/posts/${post._raw.flattenedPath}`,
+        },
+    },
+}));
+
+export default makeSource({
+    contentDirPath: CONTENT_PATH,
+    documentTypes: [Post],
+});
+```
+
+## 3. Create post file
+
+Add new folder inside your `src` folder called `posts` and add new file called `post-1.mdx`
+
+```mdx title="post-1.mdx"
+---
+title: My First Post
+date: 21 July 2023
+description: My first post
+---
+
+# Introduction
+
+Hello this is my first-post
+```
+
+## 4. Setup homepage
+
+Then, you can run
+
+```terminal
+npm run dev
+```
+
+if it's success you can see this message in your terminal
+
+```terminal
+....
+Contentlayer config change detected. Updating type definitions and data...
+Generated 2 documents in .contentlayer
+```
+
+Congrats! You configuration works like a charm✨
+
+### Get posts data using getStaticProps
+
+```tsx title="src/pages/index.tsx"
+import { Post, allPosts } from "contentlayer/generated";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { Inter } from "next/font/google";
+import Link from "next/link";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export default function Home({
+    posts,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+    return (
+        <main className={`min-h-screen p-24 ${inter.className}`}>
+            <h1 className="text-white text-3xl font-semibold text-center mb-8">
+                next-contentlayer-example
+            </h1>
+            <div className="grid grid-cols-3 gap-4">
+                {posts.map(post => {
+                    return (
+                        <Link key={post._id} href={post._raw.flattenedPath}>
+                            <div className="border rounded-md p-4">
+                                <h1 className="text-xl font-semibold">
+                                    {post.title}
+                                </h1>
+                                <p className="font-light">{post.description}</p>
+                                <p>
+                                    {new Date(post.date).toLocaleDateString()}
+                                </p>
+                            </div>
+                        </Link>
+                    );
+                })}
+            </div>
+        </main>
+    );
+}
+
+export const getStaticProps: GetStaticProps<{ posts: Post[] }> = () => {
+    return {
+        props: {
+            posts: allPosts,
+        },
+    };
+};
+```
+
+Here the result
+
+    <Image
+        blurSrc="/assets/blog/contentlayer-home-small.png"
+        src="/assets/blog/contentlayer-home.png"
+        alt="homepage"
+    />
+
+Thankyou for reading my tutorial. See full source code at [My github](https://github.com/fikriwebdev/next-contentlayer-example)

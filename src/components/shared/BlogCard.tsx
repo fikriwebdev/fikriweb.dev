@@ -1,9 +1,9 @@
 import { Blog } from "contentlayer/generated";
 import { format } from "date-fns";
-import Image from "next/image";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
+import BlurryImage from "../BlurryImage";
 
 export default function BlogCard({
     title,
@@ -11,6 +11,7 @@ export default function BlogCard({
     date,
     image,
     tags,
+    blurDataUrl,
     _raw,
 }: Blog) {
     const slug = _raw.flattenedPath;
@@ -19,15 +20,15 @@ export default function BlogCard({
         <Link href={`${slug}`}>
             <motion.div className="w-full h-[23rem] border border-gray-100 dark:border-gray-800 rounded-md overflow-hidden relative  hover:border-gray-200 dark:hover:border-gray-700  bg-white dark:bg-gray-900 shadow-sm">
                 <div className="relative h-[50%] w-full">
-                    <div className="relative w-full h-full">
-                        <Image
-                            src={image}
-                            alt="test"
-                            fill
-                            placeholder="blur"
-                            style={{ objectFit: "cover" }}
-                        />
-                    </div>
+                    <BlurryImage
+                        blurSrc={blurDataUrl}
+                        src={image}
+                        alt="test"
+                        fill
+                        placeholder="blur"
+                        blurDataURL={blurDataUrl}
+                        style={{ objectFit: "cover" }}
+                    />
                 </div>
                 <div
                     className="p-4 z-10 

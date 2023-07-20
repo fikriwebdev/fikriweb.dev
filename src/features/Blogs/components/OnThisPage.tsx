@@ -3,7 +3,7 @@ import clsm from "@/utils/clsm";
 import React from "react";
 
 const HEADER_HEIGHT = 64;
-const HEADER_OFFSET = HEADER_HEIGHT * 2;
+const HEADER_OFFSET = HEADER_HEIGHT * 1.3;
 
 export default function OnThisPage() {
     const [scrollY, setScrollY] = React.useState<number>(0);
@@ -51,14 +51,16 @@ export default function OnThisPage() {
                         <div
                             key={content.anchor}
                             className={clsm(
-                                "hover:text-black dark:hover:text-white transition-colors duration-300",
+                                "hover:text-black dark:hover:text-white transition-colors duration-300 font-light",
                                 isActive
                                     ? "text-black dark:text-white"
-                                    : "text-gray-400 dark:text-gray-500",
-                                +content.level > 2 ? "ml-4" : "ml-0"
+                                    : "text-black/50 dark:text-white/50",
+                                +content.level > 2 ? "ml-8" : "ml-0"
                             )}
                         >
-                            <a href={`#${content.anchor}`}>{content.title}</a>
+                            <a href={`#${content.anchor}`}>
+                                {">"} {content.title}
+                            </a>
                         </div>
                     );
                 })}

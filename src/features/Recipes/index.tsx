@@ -31,8 +31,8 @@ export default function ViewRecipes({ recipes }: { recipes: Recipe[] }) {
                     UI Recipes
                 </Heading>
                 <p className="mt-2 text-left text-gray-800 dark:text-gray-300">
-                    Documentation of my learning creating component that
-                    inspired with another website or app.
+                    Documentation of my learning creating components. Feel free
+                    to copy paste the code and customize based on your taste.
                 </p>
             </section>
             <section className="mt-4">

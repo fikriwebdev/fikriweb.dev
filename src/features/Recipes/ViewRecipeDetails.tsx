@@ -15,6 +15,7 @@ import ReusableButton from "@/components/shared/Recipes/Button";
 import WhatsappFileMenu from "@/components/shared/Recipes/WhatsappFileMenu";
 import { PropsWithChildren } from "react";
 import PreviewTabs from "./components/PreviewTabs";
+import PreviewInput from "./components/PreviewInput";
 
 function Container({ children }: PropsWithChildren) {
     return (
@@ -50,6 +51,7 @@ export default function ViewRecipeDetails({ recipe }: { recipe: Recipe }) {
                             Button: ReusableButton,
                             PreviewButton,
                             Tabs: PreviewTabs,
+                            Input: PreviewInput,
                         }}
                     />
                 </section>

@@ -18,7 +18,7 @@ const buttonVariants = cva(
                 // filled variants
                 filled: "bg-blue-500 border-blue-300 hover:bg-blue-600  border border-blue-500  text-white focus:ring-blue-400  dark:bg-blue-700 dark:hover:bg-blue-800",
                 "filled-secondary":
-                    "bg-gray-500 text-white border-gray-500 hover:bg-gray-600 dark:bg-gray-700 border dark:border-gray-600 dark:hover:bg-gray-800 dark:text-white focus:ring-slate-400 ",
+                    "bg-gray-500 text-white border-gray-500 hover:bg-gray-600 dark:bg-gray-700 border dark:border-gray-600 dark:hover:bg-gray-800 dark:text-white focus:ring-gray-400 ",
                 "filled-danger":
                     "bg-red-500 borde-red-300 text-white hover:bg-red-600 focus:ring-red-400 dark:bg-red-600 dark:hover:bg-red-700",
                 "filled-warning":

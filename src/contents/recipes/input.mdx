@@ -1,0 +1,79 @@
+---
+title: "Input"
+date: "18 July 2023"
+description: "Create Input that support multi variants with tailwindcss & class-variance-authority"
+stack: "tailwindcss, framer-motion, class-variance-authority"
+filename: "input"
+---
+
+## Usage
+
+```tsx
+<div className="flex flex-col gap-4 w-[300px]">
+    <Input placeholder="Enter your name" size="sm" />
+    <Input placeholder="Enter your name" size="md" />
+    <Input placeholder="Enter your name" size="lg" />
+</div>
+```
+
+<Container>
+    <Input />
+</Container>
+
+## Install dependecies
+
+```terminal
+npm install tailwindcss class-variance-authority
+```
+
+## Code
+
+```tsx
+import clsm from "@/utils/clsm";
+import { VariantProps, cva } from "class-variance-authority";
+import React from "react";
+
+const inputVariants = cva(
+    "inline-flex items-center justify-center rounded-md text-sm font-medium  disabled:opacity-70 dark:disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400   gap-2 ring-offset-white dark:focus:ring-offset-gray-900 bg-gray-700 border-gray-600 border",
+    {
+        variants: {
+            size: {
+                sm: "h-9 px-4 py-2",
+                md: "h-10 px-5 py-2",
+                lg: "h-11 px-8 py-2",
+                // ...another size
+            },
+        },
+        defaultVariants: {
+            size: "md",
+        },
+    }
+);
+
+export interface InputProps
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
+        VariantProps<typeof inputVariants> {}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+    const { className, size, ...rest } = props;
+
+    return (
+        <input
+            ref={ref}
+            className={clsm(
+                inputVariants({
+                    className,
+                    size,
+                })
+            )}
+            {...rest}
+        />
+    );
+});
+
+Input.displayName = "Input";
+
+export default Input;
+```
+
+That's it! feel free to customize the style based on your requirements.

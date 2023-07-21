@@ -3,11 +3,13 @@ import Link from "next/link";
 import WhatsappFileMenu from "./Recipes/WhatsappFileMenu";
 import Button from "./Recipes/Button";
 import Tabs from "./Recipes/AnimatedTabs";
+import Input from "./Recipes/Input";
 
 export const components = {
     "whatsapp-file-menu": <WhatsappFileMenu />,
     button: <Button variant="filled-secondary">Reusable Button</Button>,
     tabs: <Tabs />,
+    input: <Input placeholder="Enter your name..." className="w-full mx-4" />,
 };
 
 export default function RecipeCard({ title, description, filename }: Recipe) {

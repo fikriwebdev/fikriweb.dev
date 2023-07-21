@@ -104,7 +104,7 @@ export default function Header() {
     const { theme } = useTheme();
 
     return (
-        <header className="w-full fixed top-0 left-0 right-0 z-50 h-[var(--header-height)]">
+        <header className="w-full fixed top-0 left-0 right-0 z-50 h-[var(--header-height)] border-b border-gray-300/30 dark:border-b-gray-800/30">
             <div className="container max-w-full  h-full mx-auto px-4 md:px-0  relative">
                 <div className="absolute inset-0  backdrop-blur-sm"></div>
                 <div className="absolute inset-0 flex items-center h-full justify-between  dark:border-gray-800/30 px-4 container md:max-w-7xl mx-auto">

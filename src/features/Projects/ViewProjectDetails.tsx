@@ -24,6 +24,10 @@ export default function ViewProjectDetails({
                 title={project.title}
                 description={project.description}
                 openGraph={{
+                    type: "website",
+                    title: project.title,
+                    url: `${process.env.NEXT_PUBLIC_PROD_URL}projects/${project._raw.flattenedPath}`,
+                    description: project.description,
                     images: images.map(image => ({
                         url: image,
                         width: 800,

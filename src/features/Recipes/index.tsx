@@ -12,6 +12,11 @@ export default function ViewRecipes({ recipes }: { recipes: Recipe[] }) {
                 description="Documentation of my learning creating component that
                 inspired with another website or app."
                 openGraph={{
+                    type: "website",
+                    title: "UI Recipes",
+                    url: `${process.env.NEXT_PUBLIC_PROD_URL}recipes`,
+                    description:
+                        "Documentation of my learning creating component that inspired with another website or app.",
                     images: [
                         {
                             url: `${

@@ -57,6 +57,10 @@ export default function ViewBlogDetails({
                 title={blog.title}
                 description={blog.description}
                 openGraph={{
+                    type: "website",
+                    title: blog.title,
+                    url: `${process.env.NEXT_PUBLIC_PROD_URL}blog/${blog._raw.flattenedPath}`,
+                    description: blog.description,
                     images: [
                         {
                             url: blog.image,

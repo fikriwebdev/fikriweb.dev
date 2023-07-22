@@ -59,7 +59,7 @@ export default function ViewBlogDetails({
                 openGraph={{
                     images: [
                         {
-                            url: blog.image,
+                            url: `${process.env.PROD_URL}${blog.image}`,
                             width: 800,
                             height: 600,
                             alt: blog.description,

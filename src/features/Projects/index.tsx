@@ -13,7 +13,7 @@ export default function ViewProjects({ projects }: { projects: Project[] }) {
                 openGraph={{
                     images: [
                         {
-                            url: "https://www.fikriweb.dev/api/og?title=Projects",
+                            url: `${process.env.PROD_URL}api/og?title=Projects`,
                         },
                     ],
                 }}

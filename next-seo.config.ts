@@ -6,9 +6,9 @@ const defaultSeo: DefaultSeoProps = {
     description:
         "I like to create front-end solutions  that are fast, flexible",
     titleTemplate: "fikriweb.dev | %s ",
-    canonical: "https://www.fikriweb.dev",
+    canonical: `${process.env.PROD_URL}`,
     openGraph: {
-        url: "https://www.fikriweb.dev",
+        url: `${process.env.PROD_URL}`,
         title: "fikriweb.dev",
         description:
             "I like to create front-end solutions  that are fast, flexible",

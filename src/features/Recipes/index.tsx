@@ -15,7 +15,7 @@ export default function ViewRecipes({ recipes }: { recipes: Recipe[] }) {
                     images: [
                         {
                             url: `${
-                                process.env.PROD_URL
+                                process.env.NEXT_PUBLIC_PROD_URL
                             }api/og?title=${encodeURI("UI Recipes")}`,
                         },
                     ],

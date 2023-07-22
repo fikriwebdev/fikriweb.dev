@@ -59,7 +59,7 @@ export default function ViewBlogDetails({
                 openGraph={{
                     images: [
                         {
-                            url: `${process.env.PROD_URL}${blog.image}`,
+                            url: `${process.env.NEXT_PUBLIC_PROD_URL}${blog.image}`,
                             width: 800,
                             height: 600,
                             alt: blog.description,
@@ -77,7 +77,7 @@ export default function ViewBlogDetails({
                         >
                             <BlurryImage
                                 blurSrc={blog.blurDataUrl}
-                                src={blog.image}
+                                src={blog.blurDataUrl}
                                 alt={blog.title}
                                 fill
                                 style={{

@@ -13,7 +13,7 @@ export default function ViewBlogs({ blogs }: { blogs: Blog[] }) {
                 openGraph={{
                     images: [
                         {
-                            url: `${process.env.PROD_URL}api/og?title=Blog`,
+                            url: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Blog`,
                             width: 800,
                             height: 600,
                         },

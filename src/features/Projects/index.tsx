@@ -13,7 +13,7 @@ export default function ViewProjects({ projects }: { projects: Project[] }) {
                 openGraph={{
                     images: [
                         {
-                            url: `${process.env.PROD_URL}api/og?title=Projects`,
+                            url: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Projects`,
                         },
                     ],
                 }}

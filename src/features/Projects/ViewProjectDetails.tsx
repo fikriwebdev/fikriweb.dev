@@ -25,7 +25,7 @@ export default function ViewProjectDetails({
                 description={project.description}
                 openGraph={{
                     images: images.map(image => ({
-                        url: `${process.env.PROD_URL}${image}`,
+                        url: `${process.env.NEXT_PUBLIC_PROD_URL}${image}`,
                         width: 800,
                         height: 600,
                         alt: project.description,

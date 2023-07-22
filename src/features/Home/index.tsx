@@ -18,7 +18,7 @@ export default function ViewHome({ blogs, projects, recipes }: HomeProps) {
         <>
             <NextSeo
                 openGraph={{
-                    url: `${process.env.PROD_URL}`,
+                    url: `${process.env.NEXT_PUBLIC_PROD_URL}`,
                     title: "fikriweb.dev",
                     description:
                         "I like to create front-end solutions  that are fast, flexible",

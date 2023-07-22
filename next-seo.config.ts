@@ -6,7 +6,7 @@ const defaultSeo: DefaultSeoProps = {
     description:
         "I like to create front-end solutions  that are fast, flexible",
     titleTemplate: "fikriweb.dev | %s ",
-    canonical: `${process.env.PROD_URL}`,
+    canonical: `${process.env.NEXT_PUBLIC_PROD_URL}`,
 
     twitter: {
         cardType: "summary",

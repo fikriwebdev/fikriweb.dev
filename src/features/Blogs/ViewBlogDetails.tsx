@@ -77,7 +77,7 @@ export default function ViewBlogDetails({
                         >
                             <BlurryImage
                                 blurSrc={blog.blurDataUrl}
-                                src={blog.blurDataUrl}
+                                src={blog.image}
                                 alt={blog.title}
                                 fill
                                 style={{

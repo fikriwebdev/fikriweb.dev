@@ -26,11 +26,23 @@ export default function ViewProjectDetails({
                 openGraph={{
                     type: "website",
                     title: project.title,
-                    url: `${process.env.NEXT_PUBLIC_PROD_URL}projects/${project._raw.flattenedPath}`,
+                    url: `${
+                        process.env.NEXT_PUBLIC_PROD_URL
+                    }projects/${project._raw.flattenedPath.replace(
+                        "projects/",
+                        ""
+                    )}`,
                     description: project.description,
                     images: images.map(image => ({
-                        url: image,
+                        url: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }${image.replace("/", "")}`,
                         alt: project.description,
+                        secureUrl: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }${image.replace("/", "")}`,
+                        width: 800,
+                        height: 600,
                     })),
                 }}
             />

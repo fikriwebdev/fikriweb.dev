@@ -14,6 +14,7 @@ import { Share2 } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { ImageProps } from "next/image";
 import OnThisPage from "./components/OnThisPage";
+import { NextSeo } from "next-seo";
 
 interface ViewBlogDetailsProps {
     blog: Blog;
@@ -52,6 +53,56 @@ export default function ViewBlogDetails({
 
     return (
         <>
+            <NextSeo
+                title={blog.title}
+                description={blog.description}
+                openGraph={{
+                    type: "website",
+                    title: blog.title,
+                    url: `${
+                        process.env.NEXT_PUBLIC_PROD_URL
+                    }blog/${blog._raw.flattenedPath.replace("blog/", "")}`,
+                    description: blog.description,
+                    siteName: "fikriweb.dev",
+                    images: [
+                        {
+                            url: `${
+                                process.env.NEXT_PUBLIC_PROD_URL
+                            }${blog.image.replace("/", "")}`,
+                            secureUrl: `${
+                                process.env.NEXT_PUBLIC_PROD_URL
+                            }${blog.image.replace("/", "")}`,
+                            width: 800,
+                            height: 600,
+                            alt: blog.title,
+                        },
+                    ],
+                }}
+                additionalMetaTags={[
+                    {
+                        name: "twitter:title",
+                        content: blog.title,
+                    },
+                    {
+                        name: "twitter:description",
+                        content: blog.description,
+                    },
+                    {
+                        name: "twitter:image",
+                        content: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }${blog.image.replace("/", "")}`,
+                    },
+                    {
+                        name: "twitter:image:alt",
+                        content: blog.title,
+                    },
+                    {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    },
+                ]}
+            />
             <div className="blog">
                 <section>
                     <RightTopSideBlurryShape />

@@ -94,6 +94,12 @@ export default function ViewBlogDetails({
                         }${blog.image.replace("/", "")}`,
                     },
                     {
+                        name: "twitter:image:src",
+                        content: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }${blog.image.replace("/", "")}`,
+                    },
+                    {
                         name: "twitter:image:alt",
                         content: blog.title,
                     },

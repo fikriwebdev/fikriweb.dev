@@ -63,7 +63,9 @@ export default function ViewBlogDetails({
                     description: blog.description,
                     images: [
                         {
-                            url: blog.image,
+                            url: `${
+                                process.env.NEXT_PUBLIC_PROD_URL
+                            }${blog.image.replace("/", "")}`,
                         },
                     ],
                 }}

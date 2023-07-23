@@ -7,14 +7,13 @@ import Separator from "@/components/Separator";
 import BlogCard from "@/components/shared/BlogCard";
 import BoxBorderAnimation from "@/components/shared/BoxBorderAnimation";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
+import clsm from "@/utils/clsm";
 import { Blog } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Share2 } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { NextSeo } from "next-seo";
-import OnThisPage from "./components/OnThisPage";
 import { ImageProps } from "next/image";
-import clsm from "@/utils/clsm";
+import OnThisPage from "./components/OnThisPage";
 
 interface ViewBlogDetailsProps {
     blog: Blog;
@@ -53,24 +52,6 @@ export default function ViewBlogDetails({
 
     return (
         <>
-            <NextSeo
-                title={blog.title}
-                description={blog.description}
-                openGraph={{
-                    type: "website",
-                    title: blog.title,
-                    url: `${process.env.NEXT_PUBLIC_PROD_URL}blog/${blog._raw.flattenedPath}`,
-                    description: blog.description,
-                    siteName: "fikriweb.dev",
-                    images: [
-                        {
-                            url: `${
-                                process.env.NEXT_PUBLIC_PROD_URL
-                            }${blog.image.replace("/", "")}`,
-                        },
-                    ],
-                }}
-            />
             <div className="blog">
                 <section>
                     <RightTopSideBlurryShape />

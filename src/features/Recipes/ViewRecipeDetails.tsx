@@ -39,7 +39,7 @@ export default function ViewRecipeDetails({ recipe }: { recipe: Recipe }) {
                     url: `${
                         process.env.NEXT_PUBLIC_PROD_URL
                     }recipes/${recipe._raw.flattenedPath.replace(
-                        "recipe/",
+                        "recipes/",
                         ""
                     )}`,
                     description: recipe.description,

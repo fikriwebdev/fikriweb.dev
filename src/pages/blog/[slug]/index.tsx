@@ -22,9 +22,8 @@ export default function BlogDetails(props: {
                     siteName: "fikriweb.dev",
                     images: [
                         {
-                            url: `${
-                                process.env.NEXT_PUBLIC_PROD_URL
-                            }${blog.image.replace("/", "")}`,
+                            url: blog.image,
+                            secureUrl: blog.image,
                         },
                     ],
                 }}

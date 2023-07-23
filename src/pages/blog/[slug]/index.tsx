@@ -1,10 +1,12 @@
 import ViewBlogDetails from "@/features/Blogs/ViewBlogDetails";
 import { Blog, allBlogs } from "contentlayer/generated";
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 
-export default function BlogDetails(
-    props: InferGetStaticPropsType<typeof getStaticProps>
-) {
+export default function BlogDetails(props: {
+    blog: Blog;
+    recommendations: Blog[];
+    tags: string[];
+}) {
     return <ViewBlogDetails {...props} />;
 }
 
@@ -17,33 +19,22 @@ export const getStaticPaths: GetStaticPaths = () => {
 
     return {
         paths,
-        fallback: "blocking",
+        fallback: false,
     };
 };
 
-export const getStaticProps: GetStaticProps<{
-    blog: Blog;
-    recommendations: Blog[];
-    tags: string[];
-}> = ({ params }) => {
+export const getStaticProps: GetStaticProps = ({ params }) => {
     // Find the post for the current page.
 
     const blog = allBlogs.find(post =>
         post._raw.flattenedPath.includes(params?.slug as string)
     );
 
-    // 404 if the post does not exist.
-    if (!blog) {
-        return {
-            notFound: true,
-        };
-    }
-
     const recommendations = allBlogs.filter(
-        item => item.tags.includes(blog.tags) && item._id !== blog._id
+        item => item.tags.includes(blog?.tags || "") && item._id !== blog?._id
     );
 
-    const tags = blog.tags.split(",");
+    const tags = blog?.tags.split(",");
 
     return {
         props: {

@@ -17,7 +17,9 @@ export default function BlogDetails(props: {
                 openGraph={{
                     type: "website",
                     title: blog.title,
-                    url: `${process.env.NEXT_PUBLIC_PROD_URL}blog/${blog._raw.flattenedPath}`,
+                    url: `${
+                        process.env.NEXT_PUBLIC_PROD_URL
+                    }blog/${blog._raw.flattenedPath.replace("blog/", "")}`,
                     description: blog.description,
                     siteName: "fikriweb.dev",
                     images: [

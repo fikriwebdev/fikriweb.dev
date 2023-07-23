@@ -11,7 +11,7 @@ export default function RecipeDetail({
 export const getStaticPaths: GetStaticPaths = () => {
     const paths = allRecipes.map(item => ({
         params: {
-            slug: item._raw.flattenedPath.replace("projects/", ""),
+            slug: item._raw.flattenedPath.replace("recipes/", ""),
         },
     }));
 

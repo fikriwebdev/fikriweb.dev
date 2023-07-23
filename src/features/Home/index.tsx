@@ -26,8 +26,8 @@ export default function ViewHome({ blogs, projects, recipes }: HomeProps) {
                     siteName: "fikriweb.dev",
                     images: [
                         {
-                            url: `${process.env.NEXT_URL_PROD_URL}assets/images/logo.png`,
-                            secureUrl: `${process.env.NEXT_URL_PROD_URL}assets/images/logo.png`,
+                            url: `${process.env.NEXT_PUBLIC_PROD_URL}assets/images/logo.png`,
+                            secureUrl: `${process.env.NEXT_PUBLIC_PROD_URL}assets/images/logo.png`,
                             width: 800,
                             height: 600,
                             alt: "fikriweb.dev logo",
@@ -46,11 +46,11 @@ export default function ViewHome({ blogs, projects, recipes }: HomeProps) {
                     },
                     {
                         name: "twitter:image",
-                        content: `${process.env.NEXT_URL_PROD_URL}assets/images/logo.png`,
+                        content: `${process.env.NEXT_PUBLIC_PROD_URL}assets/images/logo.png`,
                     },
                     {
                         name: "twitter:image:src",
-                        content: `${process.env.NEXT_URL_PROD_URL}assets/images/logo.png`,
+                        content: `${process.env.NEXT_PUBLIC_PROD_URL}assets/images/logo.png`,
                     },
                     {
                         name: "twitter:image:alt",

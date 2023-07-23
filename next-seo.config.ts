@@ -15,8 +15,6 @@ const defaultSeo: DefaultSeoProps = {
         images: [
             {
                 url: "/assets/images/logo.png",
-                width: 800,
-                height: 600,
                 alt: "fikriweb.dev logo",
             },
         ],

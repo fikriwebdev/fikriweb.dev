@@ -11,11 +11,14 @@ export default function ViewBlogs({ blogs }: { blogs: Blog[] }) {
                 title="Blog"
                 description="Everything about my journey, story and tutorials about programming especially front-end."
                 openGraph={{
+                    type: "website",
+                    title: "Blog",
+                    url: `${process.env.NEXT_PUBLIC_PROD_URL}blog`,
+                    description:
+                        "Everything about my journey, story and tutorials about programming especially front-end.",
                     images: [
                         {
                             url: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Blog`,
-                            width: 800,
-                            height: 600,
                         },
                     ],
                 }}

@@ -30,8 +30,6 @@ export default function ViewProjectDetails({
                     description: project.description,
                     images: images.map(image => ({
                         url: image,
-                        width: 800,
-                        height: 600,
                         alt: project.description,
                     })),
                 }}

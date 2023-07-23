@@ -22,15 +22,45 @@ export default function ViewHome({ blogs, projects, recipes }: HomeProps) {
                     title: "fikriweb.dev",
                     description:
                         "I like to create front-end solutions  that are fast, flexible",
+                    type: "website",
+                    siteName: "fikriweb.dev",
                     images: [
                         {
-                            url: "/assets/images/logo.png",
+                            url: `${process.env.NEXT_URL_PROD_URL}assets/images/logo.png`,
+                            secureUrl: `${process.env.NEXT_URL_PROD_URL}assets/images/logo.png`,
                             width: 800,
                             height: 600,
                             alt: "fikriweb.dev logo",
                         },
                     ],
                 }}
+                additionalMetaTags={[
+                    {
+                        name: "twitter:title",
+                        content: "fikriweb.dev",
+                    },
+                    {
+                        name: "twitter:description",
+                        content:
+                            "I like to create front-end solutions  that are fast, flexible",
+                    },
+                    {
+                        name: "twitter:image",
+                        content: `${process.env.NEXT_URL_PROD_URL}assets/images/logo.png`,
+                    },
+                    {
+                        name: "twitter:image:src",
+                        content: `${process.env.NEXT_URL_PROD_URL}assets/images/logo.png`,
+                    },
+                    {
+                        name: "twitter:image:alt",
+                        content: "fikri logo",
+                    },
+                    {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    },
+                ]}
             />
             <Hero />
             <Timelines />

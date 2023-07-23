@@ -30,7 +30,62 @@ export default function ViewRecipeDetails({ recipe }: { recipe: Recipe }) {
 
     return (
         <>
-            <NextSeo title={recipe.title} description={recipe.description} />
+            <NextSeo
+                title={recipe.title}
+                description={recipe.description}
+                openGraph={{
+                    type: "website",
+                    title: recipe.title,
+                    url: `${
+                        process.env.NEXT_PUBLIC_PROD_URL
+                    }recipe/${recipe._raw.flattenedPath.replace(
+                        "recipe/",
+                        ""
+                    )}`,
+                    description: recipe.description,
+                    siteName: "fikriweb.dev",
+                    images: [
+                        {
+                            url: `${
+                                process.env.NEXT_PUBLIC_PROD_URL
+                            }api/og?title=${encodeURI(recipe.title)}`,
+                            secureUrl: `${
+                                process.env.NEXT_PUBLIC_PROD_URL
+                            }api/og?title=${encodeURI(recipe.title)}`,
+                        },
+                    ],
+                }}
+                additionalMetaTags={[
+                    {
+                        name: "twitter:title",
+                        content: recipe.title,
+                    },
+                    {
+                        name: "twitter:description",
+                        content: recipe.description,
+                    },
+                    {
+                        name: "twitter:image",
+                        content: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }api/og?title=${encodeURI(recipe.title)}`,
+                    },
+                    {
+                        name: "twitter:image:src",
+                        content: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }api/og?title=${encodeURI(recipe.title)}`,
+                    },
+                    {
+                        name: "twitter:image:alt",
+                        content: recipe.title,
+                    },
+                    {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    },
+                ]}
+            />
             <div className="container mx-auto max-w-full md:max-w-4xl px-4 md:px-0 blo">
                 <section>
                     <RightTopSideBlurryShape />

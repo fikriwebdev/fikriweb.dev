@@ -17,6 +17,7 @@ export default function ViewRecipes({ recipes }: { recipes: Recipe[] }) {
                     url: `${process.env.NEXT_PUBLIC_PROD_URL}recipes`,
                     description:
                         "Documentation of my learning creating component that inspired with another website or app.",
+                    siteName: "fikriweb.dev",
                     images: [
                         {
                             url: `${
@@ -25,6 +26,38 @@ export default function ViewRecipes({ recipes }: { recipes: Recipe[] }) {
                         },
                     ],
                 }}
+                additionalMetaTags={[
+                    {
+                        name: "twitter:title",
+                        content: "UI Recipes",
+                    },
+                    {
+                        name: "twitter:description",
+                        content:
+                            "Documentation of my learning creating component that inspired with another website or app.",
+                    },
+                    {
+                        name: "twitter:image",
+                        content: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }api/og?title=${encodeURI("UI Recipes")}`,
+                    },
+                    {
+                        name: "twitter:image:src",
+                        content: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }api/og?title=${encodeURI("UI Recipes")}`,
+                    },
+                    {
+                        name: "twitter:image:alt",
+                        content:
+                            "Documentation of my learning creating component that inspired with another website or app.",
+                    },
+                    {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    },
+                ]}
             />
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
                 <RightTopSideBlurryShape />

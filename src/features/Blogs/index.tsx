@@ -16,12 +16,40 @@ export default function ViewBlogs({ blogs }: { blogs: Blog[] }) {
                     url: `${process.env.NEXT_PUBLIC_PROD_URL}blog`,
                     description:
                         "Everything about my journey, story and tutorials about programming especially front-end.",
+                    siteName: "fikriweb.dev",
                     images: [
                         {
                             url: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Blog`,
                         },
                     ],
                 }}
+                additionalMetaTags={[
+                    {
+                        name: "twitter:title",
+                        content: "Blog",
+                    },
+                    {
+                        name: "twitter:description",
+                        content:
+                            "Everything about my journey, story and tutorials about programming especially front-end.",
+                    },
+                    {
+                        name: "twitter:image",
+                        content: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Blog`,
+                    },
+                    {
+                        name: "twitter:image:src",
+                        content: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Blog`,
+                    },
+                    {
+                        name: "twitter:image:alt",
+                        content: "blog",
+                    },
+                    {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    },
+                ]}
             />
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
                 <RightTopSideBlurryShape />

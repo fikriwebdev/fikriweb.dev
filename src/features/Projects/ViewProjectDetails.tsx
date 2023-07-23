@@ -33,6 +33,7 @@ export default function ViewProjectDetails({
                         ""
                     )}`,
                     description: project.description,
+                    siteName: "fikriweb.dev",
                     images: images.map(image => ({
                         url: `${
                             process.env.NEXT_PUBLIC_PROD_URL
@@ -45,6 +46,36 @@ export default function ViewProjectDetails({
                         height: 600,
                     })),
                 }}
+                additionalMetaTags={[
+                    {
+                        name: "twitter:title",
+                        content: project.title,
+                    },
+                    {
+                        name: "twitter:description",
+                        content: project.description,
+                    },
+                    {
+                        name: "twitter:image",
+                        content: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }${images[0].replace("/", "")}`,
+                    },
+                    {
+                        name: "twitter:image:src",
+                        content: `${
+                            process.env.NEXT_PUBLIC_PROD_URL
+                        }${images[0].replace("/", "")}`,
+                    },
+                    {
+                        name: "twitter:image:alt",
+                        content: project.title,
+                    },
+                    {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    },
+                ]}
             />
             <div className="container mx-auto max-w-full md:max-w-4xl px-4 md:px-0 blog">
                 <RightTopSideBlurryShape />

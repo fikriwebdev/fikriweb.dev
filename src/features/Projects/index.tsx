@@ -16,12 +16,40 @@ export default function ViewProjects({ projects }: { projects: Project[] }) {
                     url: `${process.env.NEXT_PUBLIC_PROD_URL}projects`,
                     description:
                         "Discover a showcase of projects that i am proud to present.",
+                    siteName: "fikriweb.dev",
                     images: [
                         {
                             url: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Projects`,
                         },
                     ],
                 }}
+                additionalMetaTags={[
+                    {
+                        name: "twitter:title",
+                        content: "fikriweb.dev | Projects",
+                    },
+                    {
+                        name: "twitter:description",
+                        content:
+                            "Discover a showcase of projects that i am proud to present.",
+                    },
+                    {
+                        name: "twitter:image",
+                        content: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Projects`,
+                    },
+                    {
+                        name: "twitter:image:src",
+                        content: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Projects`,
+                    },
+                    {
+                        name: "twitter:image:alt",
+                        content: "projects",
+                    },
+                    {
+                        name: "twitter:card",
+                        content: "summary_large_image",
+                    },
+                ]}
             />
             <section className="border-b pb-4 border-gray-300 dark:border-gray-700">
                 <RightTopSideBlurryShape />

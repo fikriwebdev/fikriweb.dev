@@ -61,6 +61,7 @@ export default function ViewBlogDetails({
                     title: blog.title,
                     url: `${process.env.NEXT_PUBLIC_PROD_URL}blog/${blog._raw.flattenedPath}`,
                     description: blog.description,
+                    siteName: "fikriweb.dev",
                     images: [
                         {
                             url: `${

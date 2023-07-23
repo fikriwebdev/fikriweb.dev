@@ -9,13 +9,13 @@ export default function ViewProjects({ projects }: { projects: Project[] }) {
         <>
             <NextSeo
                 title="Projects"
-                description="Discover a showcase of projects that we are proud to present."
+                description="Discover a showcase of projects that i am proud to present."
                 openGraph={{
                     type: "website",
                     title: "Projects",
                     url: `${process.env.NEXT_PUBLIC_PROD_URL}projects`,
                     description:
-                        "Discover a showcase of projects that we are proud to present.",
+                        "Discover a showcase of projects that i am proud to present.",
                     images: [
                         {
                             url: `${process.env.NEXT_PUBLIC_PROD_URL}api/og?title=Projects`,

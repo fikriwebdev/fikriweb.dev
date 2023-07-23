@@ -64,9 +64,6 @@ export default function ViewBlogDetails({
                     images: [
                         {
                             url: blog.image,
-                            width: 800,
-                            height: 600,
-                            alt: blog.description,
                         },
                     ],
                 }}

@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const colors = require("tailwindcss/colors");
+
 module.exports = {
     darkMode: "class",
     content: [
@@ -8,6 +11,13 @@ module.exports = {
     theme: {
         backgroundSize: {},
         extend: {
+            colors: {
+                primary: colors.blue,
+                secondary: colors.gray,
+                warning: colors.yellow,
+                success: colors.emerald,
+                danger: colors.reds,
+            },
             keyframes: {
                 slideDown: {
                     from: { height: 0 },

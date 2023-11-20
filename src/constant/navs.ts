@@ -11,10 +11,6 @@ const navs = [
         label: "Projects",
         href: "/projects",
     },
-    {
-        label: "UI Recipes",
-        href: "/recipes",
-    },
 ];
 
 export default navs;

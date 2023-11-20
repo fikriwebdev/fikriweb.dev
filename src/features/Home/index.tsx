@@ -1,11 +1,10 @@
 import { Blog as BlogType, Project, Recipe } from "contentlayer/generated";
+import { NextSeo } from "next-seo";
 import Blog from "./components/Blog";
 import CTACard from "./components/CTACard";
 import Hero from "./components/HomeHero";
 import Projects from "./components/Projects";
 import Timelines from "./components/Timelines";
-import UIRecipes from "./components/UIRecipes";
-import { NextSeo } from "next-seo";
 
 interface HomeProps {
     blogs: BlogType[];
@@ -13,7 +12,7 @@ interface HomeProps {
     recipes: Recipe[];
 }
 
-export default function ViewHome({ blogs, projects, recipes }: HomeProps) {
+export default function ViewHome({ blogs, projects }: HomeProps) {
     return (
         <>
             <NextSeo
@@ -66,7 +65,6 @@ export default function ViewHome({ blogs, projects, recipes }: HomeProps) {
             <Timelines />
             <Blog data={blogs} />
             <Projects data={projects} />
-            <UIRecipes data={recipes} />
             <CTACard />
         </>
     );

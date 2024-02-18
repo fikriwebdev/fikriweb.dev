@@ -1,0 +1,48 @@
+---
+title: "Anime Catalogue"
+date: "18 February 2024"
+description: "Anime catalogue that shows info about anime, anime ranking, upcoming anime."
+images: "/assets/projects/anime-catalogue-1.png,/assets/projects/anime-catalogue-2.png,/assets/projects/anime-catalogue-3.png"
+stack: "nextjs, cheerio, swr, nextui, tailwindcss"
+---
+
+## Introduction
+
+In this project i created a website to show anime listing. The information i gave to user is about anime ranking, upcoming anime, specific anime detail. You can visit the website [AnimeCatalogue](https://animecatalogue.vercel.app)
+
+## Motivation
+
+Since NextJS released a new version called AppRouter i want to explore more deep about that new technology, such as **Suspense**, **Server Components**, **Partial Rendering**, and much more.
+
+## Challenge
+
+Challenge on this project is i need to learn slowly about server components, it's tricky i need to learn composition between **client components** and **server components**. New **AppRouter** somehow is slow in my device macbook pro 2017 compared to **Pages Router**. This problem maybe can be encountered by using turbopack which i haven't try it.
+
+This is also my first time using **Cheerio** library to scrapping since i don't have the db. But its lightweight and easy to understand.
+
+## Stack
+
+In this project i use stack that i commonly used, such as:
+
+-   NextJS 14 (App router)
+-   NextUI for component library
+-   TailwindCSS for styling
+-   React-swiper slider
+-   Cheerio for scrapping data from [MyAnimeList.net](https://myanimelist.net)
+
+## Features
+
+All features that include in this project are:
+
+-   Upcoming anime in next season
+-   Anime ranking (Most popular, most favorite, top airing, top anime)
+-   Anime search
+-   Show anime by genre
+-   Show specific anime information like rating, synopsis, characters and staffs
+-   Show review from user
+
+## Improvements
+
+I know this projects is not perfect, its still slow and heavy because the speed is depend on website MyAnimeList.net which i have no control over. The lighthouse score to is so low its around 50-60. I will improve this later.
+
+If you interested to improve this project or you want to learn you can visit the repo [here](https://github.com/fikriwebdev/animecatalogue)

@@ -78,10 +78,16 @@ const mdxComponents = {
     ),
     pre: Pre,
     ol: (props: ComponentPropsWithoutRef<"ol">) => (
-        <ol className="list-decimal m-0 p-0" {...props} />
+        <ol className="list-decimal m-0 p-0 mb-8" {...props} />
+    ),
+    ul: (props: ComponentPropsWithoutRef<"ul">) => (
+        <ul className="m-0 p-0 leading-8 list-disc mb-8" {...props} />
     ),
     li: (props: ComponentPropsWithoutRef<"li">) => (
-        <li className="ml-4" {...props} />
+        <li
+            className="ml-8 text-gray-500 dark:text-white/70 text-sm md:text-base font-light mb-2"
+            {...props}
+        />
     ),
     a: (props: ComponentPropsWithoutRef<"a">) => (
         <a

@@ -12,7 +12,7 @@
   }
    
   div[data-rehype-pretty-code-fragment] pre {
-    @apply overflow-x-auto pb-2 leading-6 text-xs  overflow-y-auto max-h-[400px];
+    @apply overflow-hidden pb-2 leading-6 text-xs   overflow-y-auto max-h-[400px] relative;
   }
 
 
@@ -27,6 +27,7 @@ pre  code {
     background-color: transparent !important;
     font-weight: 400 !important;
     font-size: 14px !important;
+  
   }
    
   pre  code > .line::before {
@@ -58,12 +59,13 @@ pre  code {
     display: none;
   }
 
+  html.dark pre[data-theme='light']  {
+    display: none;
+  
+}
+
   html.dark div[data-rehype-pretty-code-title][data-theme='light'] {
     display: none;
   }
 
 
-  html.dark pre[data-theme='light']  {
-    display: none;
-  
-}

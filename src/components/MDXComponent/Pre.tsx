@@ -45,27 +45,25 @@ const Pre = ({
     const [value, copy] = useCopyToClipboard();
 
     return (
-        <>
-            <pre {...props}>
-                <div className="bg-gray-500 dark:bg-slate-700 w-full rounded-t-md flex items-center justify-between px-4 py-2 mb-2 sticky top-0">
-                    <div className="flex items-center gap-2 text-white">
-                        {getIcons(lang || "")}
-                    </div>
-                    <Button
-                        className="p-0 w-8 h-8 text-white"
-                        variant="outline"
-                        onClick={() => copy(raw || "")}
-                    >
-                        {value ? (
-                            <AiOutlineCheck className="text-md animate-checked" />
-                        ) : (
-                            <FiCopy className="text-md animate-checked" />
-                        )}
-                    </Button>
+        <pre {...props}>
+            <div className="bg-gray-500 dark:bg-slate-700 w-full rounded-t-md flex items-center justify-between px-4 py-2 mb-2 sticky top-0">
+                <div className="flex items-center gap-2 text-white">
+                    {getIcons(lang || "")}
                 </div>
-                {children}
-            </pre>
-        </>
+                <Button
+                    className="p-0 w-8 h-8 text-white"
+                    variant="outline"
+                    onClick={() => copy(raw || "")}
+                >
+                    {value ? (
+                        <AiOutlineCheck className="text-md animate-checked" />
+                    ) : (
+                        <FiCopy className="text-md animate-checked" />
+                    )}
+                </Button>
+            </div>
+            <div className="w-full overflow-auto">{children}</div>
+        </pre>
     );
 };
 

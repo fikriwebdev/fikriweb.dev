@@ -24,6 +24,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps<{
     project: Project;
     images: string[];
+    blurDataUrl: string[];
 }> = ({ params }) => {
     const project = allProjects.find(item =>
         item._raw.flattenedPath.includes((params?.slug as string) || "")
@@ -35,11 +36,13 @@ export const getStaticProps: GetStaticProps<{
         };
 
     const images = project.images.split(",");
+    const blurDataUrl = project.blurDataUrl.split(",");
 
     return {
         props: {
             project,
             images,
+            blurDataUrl,
         },
     };
 };

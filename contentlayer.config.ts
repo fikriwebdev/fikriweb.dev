@@ -35,6 +35,7 @@ export const Project = defineDocumentType(() => ({
         description: { type: "string", required: true },
         images: { type: "string", required: true },
         stack: { type: "string", required: true },
+        blurDataUrl: { type: "string", required: true },
     },
     computedFields: {
         url: {

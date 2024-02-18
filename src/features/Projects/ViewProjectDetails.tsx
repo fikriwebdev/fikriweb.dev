@@ -1,3 +1,4 @@
+import BlurryImage from "@/components/BlurryImage";
 import Heading from "@/components/Heading";
 import mdxComponents from "@/components/MDXComponent";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
@@ -5,16 +6,17 @@ import { Project } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
-import Image from "next/image";
 
 interface ViewProjectDetailsProps {
     project: Project;
     images: string[];
+    blurDataUrl: string[];
 }
 
 export default function ViewProjectDetails({
     images,
     project,
+    blurDataUrl,
 }: ViewProjectDetailsProps) {
     const MDXContent = useMDXComponent(project.body.code);
 
@@ -81,14 +83,10 @@ export default function ViewProjectDetails({
                 <RightTopSideBlurryShape />
                 <div className="mb-4 border-b pb-4 border-gray-100 dark:border-gray-700">
                     <div className="relative w-full h-[200px] md:h-[400px] rounded-md overflow-hidden mb-4">
-                        <Image
+                        <BlurryImage
                             src={images[0]}
                             alt={project.title}
-                            fill
-                            style={{
-                                objectFit: "cover",
-                                objectPosition: "center",
-                            }}
+                            blurSrc={blurDataUrl[0]}
                         />
                     </div>
                     <Heading as="h1">{project.title}</Heading>

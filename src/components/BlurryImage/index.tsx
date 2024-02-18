@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
+import useIsMounted from "@/hooks/useIsMounted";
 import clsm from "@/utils/clsm";
-import Image, { ImageProps } from "next/image";
-import React from "react";
+import React, { ComponentProps } from "react";
 
-type BlurryImageProps = ImageProps & { blurSrc: string };
+type BlurryImageProps = ComponentProps<"img"> & { blurSrc: string };
 
 export default function BlurryImage({
     blurSrc,
@@ -11,35 +12,29 @@ export default function BlurryImage({
 }: BlurryImageProps) {
     const [load, setLoad] = React.useState(false);
 
+    const ref = React.useRef<HTMLImageElement>(null);
+
+    const isMounted = useIsMounted();
+
     return (
         <div className="relative w-full h-full">
-            <div className="w-full h-full relative z-10">
-                <Image
-                    alt={alt}
-                    src={blurSrc}
-                    fill
-                    className={clsm(
-                        "object-cover object-center ",
-                        load ? "hidden" : "block"
-                    )}
-                />
-                <div
-                    className={clsm(
-                        "w-full h-full bg-white/30 relative backdrop-blur-sm transition-opacity duration-500",
-                        load ? "opacity-0" : "opacity-100"
-                    )}
-                />
-            </div>
-            <Image
-                {...rest}
+            <img
+                src={blurSrc}
                 alt={alt}
-                style={{ objectFit: "cover" }}
-                onLoad={() => {
-                    setTimeout(() => {
-                        setLoad(true);
-                    }, 500);
-                }}
+                className={clsm(
+                    "absolute inset-0 w-full h-full z-[1] object-cover object-center transition-opacity duration-500 blur-xl",
+                    load ? "opacity-0" : "opacity-100"
+                )}
             />
+            {isMounted ? (
+                <img
+                    ref={ref}
+                    {...rest}
+                    alt={alt}
+                    className="object-cover object-center w-full h-full"
+                    onLoad={() => setLoad(true)}
+                />
+            ) : null}
         </div>
     );
 }

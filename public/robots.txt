@@ -1,6 +1,6 @@
-# *
-User-agent: *
-Allow: /
+# undefined
+User-agent: undefined
+Allow: /api/og/*
 
 # Host
 Host: fikriweb-dev.vercel.app

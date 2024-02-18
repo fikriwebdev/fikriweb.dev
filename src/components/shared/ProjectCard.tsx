@@ -1,39 +1,47 @@
+/* eslint-disable @next/next/no-img-element */
 import { Project } from "contentlayer/generated";
-import Image from "next/image";
 import Link from "next/link";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
+import BlurryImage from "../BlurryImage";
 
-const OverlapedImages = ({ images }: { images: string[] }) => {
+type OverlapedImagesProps = {
+    images: string[];
+    blurDataUrl: string[];
+    title: string;
+};
+
+const OverlapedImages = ({
+    images,
+    blurDataUrl,
+    title,
+}: OverlapedImagesProps) => {
     return (
         <div className="w-full p-4 relative col-span-4 mt-16 md:mt-0   ml-4 md:ml-0 block  md:flex items-center md:mb-6">
             <div className="absolute">
                 <div className="w-[12rem] h-[12rem] relative rounded-md overflow-hidden transition-transform duration-500 transform rotate-[-4deg] group-hover:-translate-x-4 group-hover:scale-105 group-hover:rotate-[-10deg]">
-                    <Image
+                    <BlurryImage
                         src={images[0]}
-                        alt="test"
-                        fill
-                        style={{ objectFit: "cover" }}
+                        blurSrc={blurDataUrl[0]}
+                        alt={`${title} showcase 1`}
                     />
                 </div>
             </div>
             <div className="absolute z-10 transform translate-x-[4rem] translate-y-4 rotate-[-2deg] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-[-6deg] group-hover:translate-x-[3.5rem]">
                 <div className="w-[12rem] h-[12rem] relative rounded-md overflow-hidden">
-                    <Image
+                    <BlurryImage
                         src={images[1]}
-                        alt="test"
-                        fill
-                        style={{ objectFit: "cover" }}
+                        blurSrc={blurDataUrl[1]}
+                        alt={`${title} showcase 2`}
                     />
                 </div>
             </div>
             <div className="absolute z-10 translate-x-[8rem] translate-y-8 ransition-transform duration-500 transform  group-hover:scale-105 group-hover:rotate-[1deg]">
                 <div className="w-[12rem] h-[12rem] relative rounded-md overflow-hidden">
-                    <Image
+                    <BlurryImage
                         src={images[2]}
-                        alt="test"
-                        fill
-                        style={{ objectFit: "cover" }}
+                        blurSrc={blurDataUrl[2]}
+                        alt={`${title} showcase 2`}
                     />
                 </div>
             </div>
@@ -43,6 +51,7 @@ const OverlapedImages = ({ images }: { images: string[] }) => {
 
 export default function ProjectCard({ data }: { data: Project }) {
     const images = data.images.split(",");
+    const blurDataUrl = data.blurDataUrl.split(",");
 
     const slug = data._raw.flattenedPath;
 
@@ -63,7 +72,11 @@ export default function ProjectCard({ data }: { data: Project }) {
                         consectetur adipisicing elit. Officia, aliquid.
                     </p>
                 </div>
-                <OverlapedImages images={images} />
+                <OverlapedImages
+                    images={images}
+                    blurDataUrl={blurDataUrl}
+                    title={data.title}
+                />
             </div>
         </Link>
     );

@@ -12,9 +12,9 @@ import { Blog } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { Share2 } from "lucide-react";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { ImageProps } from "next/image";
-import OnThisPage from "./components/OnThisPage";
 import { NextSeo } from "next-seo";
+import { ComponentProps } from "react";
+import OnThisPage from "./components/OnThisPage";
 
 interface ViewBlogDetailsProps {
     blog: Blog;
@@ -22,7 +22,7 @@ interface ViewBlogDetailsProps {
     tags: string[];
 }
 
-type BlogImageProps = ImageProps & {
+type BlogImageProps = ComponentProps<"img"> & {
     blurSrc: string;
 };
 
@@ -36,7 +36,6 @@ const BlogImage = ({ blurSrc, className, ...rest }: BlogImageProps) => {
         >
             <BlurryImage
                 blurSrc={blurSrc}
-                fill
                 className="object-cover object-conter"
                 {...rest}
             />
@@ -121,7 +120,6 @@ export default function ViewBlogDetails({
                                 blurSrc={blog.blurDataUrl}
                                 src={blog.image}
                                 alt={blog.title}
-                                fill
                                 style={{
                                     objectFit: "cover",
                                     objectPosition: "center",

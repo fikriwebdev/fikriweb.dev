@@ -24,9 +24,6 @@ export default function BlogCard({
                         blurSrc={blurDataUrl}
                         src={image}
                         alt="test"
-                        fill
-                        placeholder="blur"
-                        blurDataURL={blurDataUrl}
                         style={{ objectFit: "cover" }}
                     />
                 </div>

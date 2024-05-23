@@ -2,16 +2,39 @@ import BlurryImage from "@/components/BlurryImage";
 import Heading from "@/components/Heading";
 import mdxComponents from "@/components/MDXComponent";
 import RightTopSideBlurryShape from "@/components/shared/RightTopSideBlurryShape";
+import clsm from "@/utils/clsm";
 import { Project } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { NextSeo } from "next-seo";
+import { ComponentProps } from "react";
 
 interface ViewProjectDetailsProps {
     project: Project;
     images: string[];
     blurDataUrl: string[];
 }
+
+type BlogImageProps = ComponentProps<"img"> & {
+    blurSrc: string;
+};
+
+const BlogImage = ({ blurSrc, className, ...rest }: BlogImageProps) => {
+    return (
+        <div
+            className={clsm(
+                "w-full h-[300px] relative rounded-md overflow-hidden my-4",
+                className
+            )}
+        >
+            <BlurryImage
+                blurSrc={blurSrc}
+                className="object-cover object-conter"
+                {...rest}
+            />
+        </div>
+    );
+};
 
 export default function ViewProjectDetails({
     images,
@@ -94,7 +117,9 @@ export default function ViewProjectDetails({
                         {format(parseISO(project.date), "dd MMM yyyy")}
                     </p>
                 </div>
-                <MDXContent components={mdxComponents} />
+                <MDXContent
+                    components={{ ...mdxComponents, Image: BlogImage }}
+                />
             </div>
         </>
     );

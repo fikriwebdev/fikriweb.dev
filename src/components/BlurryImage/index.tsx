@@ -31,7 +31,7 @@ export default function BlurryImage({
                     ref={ref}
                     {...rest}
                     alt={alt}
-                    className="object-cover object-center w-full h-full"
+                    className="object-cover object-center w-full h-full scale-105"
                     onLoad={() => setLoad(true)}
                 />
             ) : null}

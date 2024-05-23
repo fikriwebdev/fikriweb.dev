@@ -67,9 +67,8 @@ export default function ProjectCard({ data }: { data: Project }) {
                         {data.title}
                     </h1>
 
-                    <p className="text-gray-700 dark:text-gray-200 text-sm mt-2 line-clamp-5">
-                        {data.description} Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Officia, aliquid.
+                    <p className="text-gray-700 dark:text-gray-200 text-sm mt-2 line-clamp-3 lg:line-clamp-5">
+                        {data.description}
                     </p>
                 </div>
                 <OverlapedImages
